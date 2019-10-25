@@ -1,0 +1,62 @@
+/*
+Author: Alphas
+
+*/
+/* ==========================================================================
+   Alphas custom styles
+   ========================================================================== */
+   
+   p{
+	   font-family: 'arial';
+	   font-weight:400;
+   }
+   
+
+/*//////////////////////////////////////////////////////////////
+
+.item-content p{
+	background-color: #fff;
+	color:#333;
+	padding:2px 12px;
+	text-align: center;
+	transition: all 1s ease-in;
+	position:absolute;
+	top: 100%;
+
+}
+.item-overlay:hover .item-content p{
+	top: 50%;
+	padding:20px 12px;
+}
+
+.item-content h1{
+	position:ab
+	top: 50%;
+	padding:20px 12px;
+}
+
+.item-overlay:hover .item-content h1{
+	top: 100%;
+	padding:20px 12px;
+}
+
+@keyframes flyin-from-down{
+	0%{
+		top:100px;
+	}
+	50%{
+		top:-2px;
+	}	
+	100%{
+		top:0;
+	}	
+	
+}
+
+/////////////////////////////////////////////////////////////////////////*/
+   
+   
+   
+   
+   
+   
