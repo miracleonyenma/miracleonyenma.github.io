@@ -33,7 +33,7 @@ $(document).ready(function(){
 	loadTl
 	.to(loadBlind, 1.8, {y:"-100%"})
 	.from(blob, 1.8, {autoAlpha: 0, y: "90%"}, delay=1)
-	.from(wordsTxt, 1.8, {autoAlpha: 0, x: "-90%"}, delay=1)
+	// .from(wordsTxt, 1.8, {autoAlpha: 0, x: "-90%"}, delay=1)
 
 
 
@@ -45,42 +45,59 @@ $(document).ready(function(){
 	
 });
 
-var i = 0;
-var duration = 6000; //duration
-var contentTxt = document.getElementById("content-txt"); //display text
-var words = []; //array for possible words
-var txt = document.querySelector(".txt-contain").children[0];
-var pos = 0;
-//words list
-words[0] ='Designer';
-words[1] ='"Coder"';
-words[2] ='Developer';
-words[3] ='Hi';
 
 
-function changetxt(){
-	contentTxt.innerHTML = words[i];
-	contentTxt.dataset.name = words[i];
-	var wordsLength = words.length -1;
+function landingTxt(){
+	var i = 0;
+	var duration = 6000; //duration
+	var contentTxt = document.getElementById("content-txt"); //display text
+	var words = []; //array for possible words
+	var txt = document.querySelector(".txt-contain").children[0];
+	var pos = 0;
+	//words list
+	words[0] ='Designer';
+	words[1] ='"Coder"';
+	words[2] ='Developer';
+	words[3] ='"Hi" guy';
 	
-	if( i < wordsLength){
-		i++;
-		
-	}
+	var animeTl = anime.timeline({
+		easing: 'easeOutExpo',
+		direction: 'alternate-reverse',
+		loop: true,
+		duration: 1050
+	});
 	
-	else{
-		i = 0;
-	}
+	animeTl.add({
+		targets: "#content-txt",
+		translateY: "100%"
+	});
+	animeTl.add({
+		targets: "#content-txt",
+		changeBegin: 
+			function changetxt(){
+				
+				contentTxt.innerHTML = words[i];
+				contentTxt.dataset.name = words[i];
+				var wordsLength = words.length -1;
+				if( i < wordsLength){
+					i++;
+				}
+				else{
+					i = 0;
+				}
+			}
+	});
+	animeTl.add({
+		targets: "#content-txt",
+		translateY: "0"
+	});
 	
-	setTimeout("changetxt()", duration);
 }
 
 
-function animatetxt(){
-	
-}
 
-window.addEventListener("load", changetxt);
+
+window.addEventListener("load", landingTxt);
 
 
 
