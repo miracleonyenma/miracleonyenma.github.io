@@ -25,7 +25,6 @@ $(document).ready(function(){
 	.addTo(controller);
 
 
-
 	//animate words
 	var wordsTxt = $('#content-txt');
 	var blob = document.getElementById("blob");

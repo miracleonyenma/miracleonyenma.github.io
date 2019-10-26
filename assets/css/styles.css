@@ -12,6 +12,8 @@ Use the following CSS rules to specify these families: */
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-transition: 0.85s ease-out;
+  transition: 0.85s ease-out;
 }
 
 :root {
@@ -22,17 +24,24 @@ Use the following CSS rules to specify these families: */
   --display-text: #fff;
   --text: #232329;
   --background: #fff;
-  --background-write-up: #232329;
+  --background-write-up: rgba(35, 35, 41, 0.658);
   --background-variant: #ffd431;
   --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.6);
   --display-text: #232329;
   --text: #fff;
   --background: #fff;
-  --background-write-up: #232329;
+  --background-write-up: rgba(35, 35, 41, 0.658);
   --background-variant: #3197ff;
   --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.6);
   --display-text: #232329;
   --text: #fff;
+  --background: #232329;
+  --background-write-up: #fff;
+  --background-write-up: rgba(255, 255, 255, 0.664);
+  --background-variant: #3197ff;
+  --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
+  --display-text: #fff;
+  --text: #232329;
 }
 
 body {
@@ -85,9 +94,8 @@ button {
 }
 
 .container-header {
-  width: 96%;
-  position: relative;
-  display: table;
+  width: 100%;
+  position: fixed;
   padding: 2%;
   margin: auto;
 }
@@ -392,22 +400,42 @@ svg {
   width: 500px;
   background: var(--background-variant);
   background-size: cover;
-  animation: fluid 6s linear infinite;
-  -webkit-animation: fluid 6s linear infinite;
+  -webkit-animation: fluid 12s linear infinite;
+          animation: fluid 12s linear infinite;
   border-radius: 54% 56% 67% 48% / 65% 58% 52% 45%;
 }
 
-@keyframes fluid {
+.blob:hover {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  animation-direction: alternate-reverse;
+}
+
+@-webkit-keyframes fluid {
   0% {
     border-radius: 54% 56% 67% 48% / 65% 58% 52% 45%;
   }
+  12% {
+    border-radius: 53% 81% 91% 58% / 88% 56% 84% 80%;
+  }
   25% {
-    border-radius: 73% 78% 89% 52% / 83% 56% 84% 60%;
+    border-radius: 25% 95% 70% 50% / 65% 65% 52% 60%;
+  }
+  37% {
+    border-radius: 33% 78% 50% 60% / 70% 56% 85% 60%;
   }
   50% {
-    border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;
+    border-radius: 50% 72% 44% 56% / 49% 40% 60% 51%;
+  }
+  62% {
+    border-radius: 47% 60% 70% 37% / 47% 72% 38% 57%;
   }
   75% {
+    border-radius: 72% 80% 84% 62% / 100% 70% 75% 50%;
+  }
+  87% {
     border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%;
   }
   100% {
@@ -415,17 +443,29 @@ svg {
   }
 }
 
-@-webkit-keyframes fluid {
+@keyframes fluid {
   0% {
     border-radius: 54% 56% 67% 48% / 65% 58% 52% 45%;
   }
+  12% {
+    border-radius: 53% 81% 91% 58% / 88% 56% 84% 80%;
+  }
   25% {
-    border-radius: 73% 78% 89% 52% / 83% 56% 84% 60%;
+    border-radius: 25% 95% 70% 50% / 65% 65% 52% 60%;
+  }
+  37% {
+    border-radius: 33% 78% 50% 60% / 70% 56% 85% 60%;
   }
   50% {
-    border-radius: 28% 72% 44% 56% / 49% 40% 60% 51%;
+    border-radius: 50% 72% 44% 56% / 49% 40% 60% 51%;
+  }
+  62% {
+    border-radius: 47% 60% 70% 37% / 47% 72% 38% 57%;
   }
   75% {
+    border-radius: 72% 80% 84% 62% / 100% 70% 75% 50%;
+  }
+  87% {
     border-radius: 40% 60% 70% 30% / 47% 62% 38% 53%;
   }
   100% {
@@ -436,7 +476,7 @@ svg {
 .container-overlay {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%;
   width: 100%;
   height: 100%;
   -webkit-transition: all 0.45s ease-out;
@@ -445,7 +485,7 @@ svg {
 
 .overlay-content {
   position: absolute;
-  left: 4%;
+  left: 104%;
   top: 50%;
   color: var(--display-text);
   -webkit-transform: translate(-50%, -40%);
@@ -483,6 +523,8 @@ svg {
   color: var(--display-text);
   font-weight: 900;
   -webkit-font-smoothing: antialiased !important;
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 .txt-contain span:before {
@@ -674,11 +716,26 @@ svg {
   border-radius: 8px;
 }
 
+.item-overlay:hover .item-image {
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
 .item-content {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   left: 50%;
   top: 100%;
   width: 96%;
+  padding: 2em;
   height: 100%;
   border-top: 88px solid var(--background-variant);
   background-color: var(--background-write-up);
@@ -693,7 +750,7 @@ svg {
   padding: 0.25em;
   margin-bottom: 0.15em;
   text-align: center;
-  font-size: 1.8em;
+  font-size: 2em;
 }
 
 .item-content p {
@@ -713,6 +770,7 @@ svg {
 
 .footer {
   position: relative;
+  height: 70px;
   width: 100%;
   -webkit-transition: .32s ease-in;
   transition: .32s ease-in;
@@ -720,7 +778,7 @@ svg {
 }
 
 #footer p {
-  font-family: "Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Muli","Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif;
   color: var(--background);
   font-stretch: ultra-condensed;
   -webkit-font-feature-settings: inherit;
@@ -749,9 +807,9 @@ svg {
           transform: translateY(0);
 }
 
-.columns-def {
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+.column-def {
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
   position: relative;
 }
 
