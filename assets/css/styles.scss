@@ -39,12 +39,12 @@ Use the following CSS rules to specify these families: */
     --text: #fff;
 
 
-    --background: #232329;
-    --background-write-up: #fff;
-    --background-variant: #3197ff;
-    --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
-    --display-text: #fff;
-    --text: #232329;
+    // --background: #232329;
+    // --background-write-up: #fff;
+    // --background-variant: #3197ff;
+    // --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
+    // --display-text: #fff;
+    // --text: #232329;
 
 }
 
@@ -601,6 +601,9 @@ body {
   .intro-container{
     Width: 80%;
     margin: auto;
+    position: relative;
+    transition: 0.64s cubic-bezier(0.215, 0.610, 0.355, 1);
+    top: 0;
 }
 
 @media screen and ( min-width: 768px){
@@ -689,7 +692,7 @@ body {
 	top: 100%;
 	width: 96%;
 	height: 100%;
-	border-top: 88px solid #3197ff;
+	border-top: 88px solid var(--background-variant);
     background-color: var(--background-write-up);
     // padding: 5%;	
 	color: var(--text);
@@ -716,7 +719,7 @@ body {
 	top: 50%;
 	width: 96%;
 	height: 100%;
-	border-top: 10px solid #3197ff;
+	border-top: 10px solid var(--background-variant);
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }   
@@ -751,12 +754,20 @@ body {
   .footer-content {
     position: relative;
     transform: translateY(-160%);
-    -webkit-transform: translateY(-160%);
     transition: 0.52s cubic-bezier(0.645, 0.045, 0.35, 1);
-    -webkit-transition: 0.52s cubic-bezier(0.645, 0.045, 0.35, 1);
   }
   
   .move-in {
     transform: translateY(0);
-    -webkit-transform: translateY(0);
+  }
+
+  .gallery-def{
+    // opacity: 0; 
+  }
+  .columns-def{
+    transform: translateY(100%); 
+    position: relative;
+  }
+  .move-in-up{
+    transform: translateY(0); 
   }

@@ -33,12 +33,6 @@ Use the following CSS rules to specify these families: */
   --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.6);
   --display-text: #232329;
   --text: #fff;
-  --background: #232329;
-  --background-write-up: #fff;
-  --background-variant: #3197ff;
-  --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
-  --display-text: #fff;
-  --text: #232329;
 }
 
 body {
@@ -590,6 +584,10 @@ svg {
 .intro-container {
   Width: 80%;
   margin: auto;
+  position: relative;
+  -webkit-transition: 0.64s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.64s cubic-bezier(0.215, 0.61, 0.355, 1);
+  top: 0;
 }
 
 @media screen and (min-width: 768px) {
@@ -682,7 +680,7 @@ svg {
   top: 100%;
   width: 96%;
   height: 100%;
-  border-top: 88px solid #3197ff;
+  border-top: 88px solid var(--background-variant);
   background-color: var(--background-write-up);
   color: var(--text);
   -webkit-transform: translate(-50%, 0);
@@ -692,8 +690,8 @@ svg {
 }
 
 .item-content h1 {
-  padding: 0.625em;
-  margin-bottom: 0.35em;
+  padding: 0.25em;
+  margin-bottom: 0.15em;
   text-align: center;
   font-size: 1.8em;
 }
@@ -708,7 +706,7 @@ svg {
   top: 50%;
   width: 96%;
   height: 100%;
-  border-top: 10px solid #3197ff;
+  border-top: 10px solid var(--background-variant);
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -740,14 +738,25 @@ svg {
 
 .footer-content {
   position: relative;
-  transform: translateY(-160%);
   -webkit-transform: translateY(-160%);
-  transition: 0.52s cubic-bezier(0.645, 0.045, 0.35, 1);
+          transform: translateY(-160%);
   -webkit-transition: 0.52s cubic-bezier(0.645, 0.045, 0.35, 1);
+  transition: 0.52s cubic-bezier(0.645, 0.045, 0.35, 1);
 }
 
 .move-in {
-  transform: translateY(0);
   -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.columns-def {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  position: relative;
+}
+
+.move-in-up {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
 /*# sourceMappingURL=styles.css.map */
