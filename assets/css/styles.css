@@ -691,6 +691,18 @@ svg {
   Transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.item-content h1 {
+  padding: 0.625em;
+  margin-bottom: 0.35em;
+  text-align: center;
+  font-size: 1.8em;
+}
+
+.item-content p {
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+}
+
 .item-overlay:hover .item-content {
   left: 50%;
   top: 50%;
@@ -699,14 +711,6 @@ svg {
   border-top: 10px solid #3197ff;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-
-.item-content {
-  padding: 5%;
-}
-
-.item-content h1 {
-  font-weight: 100px;
 }
 
 .footer {

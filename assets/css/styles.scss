@@ -690,12 +690,24 @@ body {
 	width: 96%;
 	height: 100%;
 	border-top: 88px solid #3197ff;
-	background-color: var(--background-write-up);
+    background-color: var(--background-write-up);
+    // padding: 5%;	
 	color: var(--text);
 	-webkit-transform: translate(-50%, 0);
 	transform: translate(-50%, 0);
 	-webkit-transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-	Transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    Transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    h1{
+        padding: 0.25em;
+        margin-bottom: 0.15em;
+        text-align: center;
+        font-size: 1.8em;
+    }
+    p{
+        text-align: center;
+        font-family: 'PT Sans', sans-serif;
+    }
 }
    
    
@@ -708,15 +720,6 @@ body {
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }   
-
-.item-content{
-	padding: 5%;	
-}
-
-.item-content h1{
-	font-weight:100px;
-	
-}
 
 
 
