@@ -128,7 +128,7 @@ svg {
 #path1 {
   display: inline;
   /*vector-effect:none;*/
-  fill: #272626;
+  fill: #ffffff;
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: none;
@@ -149,7 +149,7 @@ svg {
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: #ffd431;
-  stroke-width: 2;
+  stroke-width: 0.4;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
@@ -160,13 +160,8 @@ svg {
 }
 
 .svg-container svg:last-child {
-  clip: rect(0, 40px, 40px, 0);
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
   -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
-.svg-container:hover svg:last-child {
-  clip: rect(32px, 40px, 40px, 0);
 }
 
 .svg-container:hover #circle1 {
