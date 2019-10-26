@@ -14,6 +14,40 @@ Use the following CSS rules to specify these families: */
 
 }
 
+:root{
+    --background: #232329;
+    --background-write-up: #fff;
+    --background-variant: #ffd431;
+    --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
+    --display-text: #fff;
+    --text: #232329;
+
+    
+    --background: #fff;
+    --background-write-up: #232329;
+    --background-variant: #ffd431;
+    --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.6);
+    --display-text: #232329;
+    --text: #fff;
+
+    
+    --background: #fff;
+    --background-write-up: #232329;
+    --background-variant: #3197ff;
+    --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.6);
+    --display-text: #232329;
+    --text: #fff;
+
+
+    --background: #232329;
+    --background-write-up: #fff;
+    --background-variant: #3197ff;
+    --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
+    --display-text: #fff;
+    --text: #232329;
+
+}
+
 body {
     font-family: 'PT Sans', sans-serif;
     font-family: 'Playfair Display', serif;
@@ -28,20 +62,20 @@ body {
     overflow-y: scroll;
     margin: auto;
     /*padding: 1%;*/
-    background-color: #ffd431;
+    background-color: var(--background-variant);
   }
   
   #body::-webkit-scrollbar {
     width: 12px;
-    background-color: #272626;
+    background-color: var(--background);
   }
   
   #body::-webkit-scrollbar-track {
-    background-color: #272626;
+    background-color: var(--background);
   }
   
   #body::-webkit-scrollbar-thumb {
-    background-color: #ffd431;
+    background-color: var(--background-variant);
   }
   
   .hoves-preloader {
@@ -60,7 +94,7 @@ body {
   .hoves-container {
     width: 100%;
     height: 100vh;
-    background-color: #272626;
+    background-color: var(--background);
   }
   
   .container-header {
@@ -93,7 +127,7 @@ body {
     fill: none;
     fill-opacity: 1;
     fill-rule: nonzero;
-    stroke: #ffd431;
+    stroke: var(--display-text);
     stroke-width: 5;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -112,7 +146,7 @@ body {
     fill: none;
     fill-opacity: 1;
     fill-rule: nonzero;
-    stroke: #272626;
+    stroke: var(--background);
     stroke-width: 8;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -128,11 +162,11 @@ body {
   #path1 {
     display: inline;
     /*vector-effect:none;*/
-    fill: #ffffff;
+    fill: var(--display-text);
     fill-opacity: 1;
     fill-rule: nonzero;
-    stroke: none;
-    stroke-width: 3.57026744;
+    // stroke: var(--background-variant);
+    stroke-width: 0.5;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 4;
@@ -145,11 +179,11 @@ body {
   #path2 {
     display: inline;
     /*vector-effect:none;*/
-    fill: #ffd431;
+    fill: var(--background-variant);
     fill-opacity: 1;
     fill-rule: nonzero;
-    stroke: #ffd431;
-    stroke-width: 0.4;
+    // stroke: var(--display-text);
+    stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 4;
@@ -278,7 +312,7 @@ body {
     fill: none;
     fill-opacity: 1;
     fill-rule: nonzero;
-    stroke: #ffd431;
+    stroke: var(--display-text);
     stroke-width: 10;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -297,7 +331,7 @@ body {
     fill: none;
     fill-opacity: 1;
     fill-rule: nonzero;
-    stroke: #ffd431;
+    stroke: var(--display-text);
     stroke-width: 10;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -349,7 +383,7 @@ body {
     fill: none;
     fill-opacity: 1;
     fill-rule: nonzero;
-    stroke: #ffd431;
+    stroke: var(--display-text);
     stroke-width: 8;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -372,11 +406,10 @@ body {
   }
   
   .blob {
-    -webkit-box-shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
-            box-shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--shadow);
     height: 500px;
     width: 500px;
-    background: #ffd431;
+    background: var(--background-variant);
     background-size: cover;
     animation: fluid 6s linear infinite;
     -webkit-animation: fluid 6s linear infinite;
@@ -433,7 +466,7 @@ body {
     position: absolute;
     left: 4%;
     top: 50%;
-    color: #fff;
+    color: var(--display-text);
     -webkit-transform: translate(-50%, -40%);
     transform: translate(-50%, -50%);
     -webkit-transition: all 0.45s ease-out;
@@ -466,13 +499,13 @@ body {
     text-decoration: none;
     position: relative;
     overflow: hidden;
-    color: #fff;
+    color: var(--display-text);
     font-weight: 900;
     -webkit-font-smoothing: antialiased !important;
   }
   
   .txt-contain span:before {
-    color: #ffd431;
+    color: var(--background-variant);
     content: attr(data-name);
     position: absolute;
     top: 0;
@@ -534,7 +567,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    background-color: #272626;
+    background-color: var(--background);
     overflow-y: hidden;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -549,9 +582,8 @@ body {
     Width: 90%;
     margin: 20px auto;
     Padding: 0 0;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+    background-color: var(--background-write-up);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
     position: relative;
   }
   
@@ -561,8 +593,7 @@ body {
       margin: 20px auto;
       Padding: 0 0;
       background-color: #fff;
-      -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
-              box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
       position: relative;
     }
   }
@@ -658,9 +689,9 @@ body {
 	top: 100%;
 	width: 96%;
 	height: 100%;
-	border-top: 88px solid #ffd431;
-	background-color: #fff;
-	color: #333;
+	border-top: 88px solid #3197ff;
+	background-color: var(--background-write-up);
+	color: var(--text);
 	-webkit-transform: translate(-50%, 0);
 	transform: translate(-50%, 0);
 	-webkit-transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -673,9 +704,7 @@ body {
 	top: 50%;
 	width: 96%;
 	height: 100%;
-	border-top: 10px solid #ffd431;
-	background-color: #fff;
-	color: #333;
+	border-top: 10px solid #3197ff;
 	-webkit-transform: translate(-50%, -50%);
 	transform: translate(-50%, -50%);
 }   
@@ -701,7 +730,7 @@ body {
   
   #footer p {
     font-family: "Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #272626;
+    color: var(--background);
     font-stretch: ultra-condensed;
     -webkit-font-feature-settings: inherit;
             font-feature-settings: inherit;
@@ -711,7 +740,7 @@ body {
   }
   
   #footer p a {
-    color: #fff;
+    color: var(--display-text);
     text-decoration: none;
     cursor: pointer;
   }

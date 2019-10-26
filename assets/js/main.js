@@ -58,7 +58,7 @@ function landingTxt(){
 	words[0] ='Designer';
 	words[1] ='"Coder"';
 	words[2] ='Developer';
-	words[3] ='"Hi" guy';
+	words[3] ='Techie';
 	
 	var animeTl = anime.timeline({
 		easing: 'easeOutExpo',
@@ -69,7 +69,8 @@ function landingTxt(){
 	
 	animeTl.add({
 		targets: "#content-txt",
-		translateY: "100%"
+		translateY: "100%",
+		delay: 1050
 	});
 	animeTl.add({
 		targets: "#content-txt",
