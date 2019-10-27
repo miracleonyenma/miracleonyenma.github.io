@@ -18,7 +18,7 @@ Use the following CSS rules to specify these families: */
     --background: #232329;
     --background-write-up: #fff;
     --background-variant: #ffd431;
-    --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
+    --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.5);
     --display-text: #fff;
     --text: #232329;
 
@@ -26,7 +26,7 @@ Use the following CSS rules to specify these families: */
     --background: #fff;
     --background-write-up: rgba(35, 35, 41, 0.658);
     --background-variant: #ffd431;
-    --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.6);
+    --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.5);
     --display-text: #232329;
     --text: #fff;
 
@@ -35,14 +35,14 @@ Use the following CSS rules to specify these families: */
     // --background-write-up: #232329;
     --background-write-up: rgba(35, 35, 41, 0.658);
     --background-variant: #3197ff;
-    --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.6);
+    --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.5);
     --display-text: #232329;
     --text: #fff;
 
 
     --background: #232329;
     --background-write-up: #fff;
-    --background-write-up: rgba(255, 255, 255, 0.664);
+    --background-write-up: rgba(255, 255, 255, 0.564);
     --background-variant: #3197ff;
     --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
     --display-text: #fff;
@@ -658,7 +658,11 @@ body {
 	left: 0;
 	width: 100%;
 	height:100%;
-	Overflow: hidden;
+  Overflow: hidden;
+  
+  &:hover .item-image{
+    filter: blur(8.5px);
+  }
 	
 }
 
