@@ -779,22 +779,30 @@ svg {
 
 .footer {
   position: relative;
-  height: 70px;
+  height: 100px;
   width: 100%;
   -webkit-transition: .32s ease-in;
   transition: .32s ease-in;
   overflow: hidden;
+  background: var(--background-write-up);
 }
 
 #footer p {
   font-family: "Muli","Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: var(--background);
   font-stretch: ultra-condensed;
   -webkit-font-feature-settings: inherit;
   font-feature-settings: inherit;
   text-transform: uppercase;
   font-weight: 900;
+  padding: 1em;
   font-size: x-large;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: var(--text);
 }
 
 #footer p a {
