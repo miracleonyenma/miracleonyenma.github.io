@@ -263,7 +263,7 @@ svg {
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: #fff;
-  stroke-width: 10;
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
@@ -282,7 +282,7 @@ svg {
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: #fff;
-  stroke-width: 10;
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
@@ -301,7 +301,7 @@ svg {
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: var(--display-text);
-  stroke-width: 10;
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
@@ -320,7 +320,7 @@ svg {
   fill-opacity: 1;
   fill-rule: nonzero;
   stroke: var(--display-text);
-  stroke-width: 10;
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
@@ -485,7 +485,7 @@ svg {
 
 .overlay-content {
   position: absolute;
-  left: 104%;
+  left: 205%;
   top: 50%;
   color: var(--display-text);
   -webkit-transform: translate(-50%, -40%);
@@ -514,7 +514,7 @@ svg {
 .txt-contain span {
   top: 10px;
   position: absolute;
-  font-size: 4rem;
+  font-size: 3.05rem;
   display: block;
   line-height: 1.5;
   text-decoration: none;
@@ -542,6 +542,15 @@ svg {
 
 .txt-contain span:hover:before {
   width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .overlay-content {
+    left: 104%;
+  }
+  .overlay-content .txt-contain span {
+    font-size: 4rem;
+  }
 }
 
 @keyframes float {
