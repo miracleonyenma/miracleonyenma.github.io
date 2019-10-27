@@ -210,7 +210,7 @@ svg {
   position: absolute;
   transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
-  width: 98%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
@@ -744,25 +744,28 @@ svg {
   left: 50%;
   top: 100%;
   width: 96%;
-  padding: 2em;
   height: 100%;
   border-top: 88px solid var(--background-variant);
   background-color: var(--background-write-up);
   color: var(--text);
   -webkit-transform: translate(-50%, 0);
-  transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
   -webkit-transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  Transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: all 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.item-content h1 {
+.item-content .item-wrapper {
+  padding: 1em;
+}
+
+.item-content .item-wrapper h1 {
   padding: 0.25em;
   margin-bottom: 0.15em;
   text-align: center;
   font-size: 2em;
 }
 
-.item-content p {
+.item-content .item-wrapper p {
   text-align: center;
   font-family: 'PT Sans', sans-serif;
 }
