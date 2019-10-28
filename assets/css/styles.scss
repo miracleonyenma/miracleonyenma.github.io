@@ -11,7 +11,6 @@ Use the following CSS rules to specify these families: */
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    transition: 0.85s ease-out;
 }
 
 :root{
@@ -222,13 +221,11 @@ body {
     top: 50%;
     position: absolute;
     transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
     width: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr 1fr 1fr 1fr;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-    overflow-x: hidden;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    overflow: hidden;
   }
   
   @media screen and (min-width: 768px){
@@ -280,8 +277,8 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 4;
-    stroke-dasharray: 200, 200;
-    stroke-dashoffset: 100;
+    stroke-dasharray: 120;
+    stroke-dashoffset: calc(120 - (120 * 25) / 100);
     stroke-opacity: 1;
     paint-order: markers stroke fill;
     transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -299,8 +296,8 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 4;
-    stroke-dasharray: 200, 200;
-    stroke-dashoffset: 0;
+    stroke-dasharray: 120;
+    stroke-dashoffset: calc(120 - (120 * 25) / 100);
     stroke-opacity: 1;
     paint-order: markers stroke fill;
     transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -318,8 +315,8 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 4;
-    stroke-dasharray: 200, 200;
-    stroke-dashoffset: 0;
+    stroke-dasharray: 120;
+    stroke-dashoffset: calc(120 - (120 * 25) / 100);
     stroke-opacity: 1;
     paint-order: markers stroke fill;
     transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -337,8 +334,8 @@ body {
     stroke-linecap: round;
     stroke-linejoin: round;
     stroke-miterlimit: 4;
-    stroke-dasharray: 200, 200;
-    stroke-dashoffset: 20;
+    stroke-dasharray: 120;
+    stroke-dashoffset: calc(120 - (120 * 25) / 100);
     stroke-opacity: 1;
     paint-order: markers stroke fill;
     transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -414,12 +411,47 @@ body {
     background-size: cover;
     animation: fluid 12s linear infinite;
     border-radius: 54% 56% 67% 48% / 65% 58% 52% 45%;
+    position: relative;
 
 
     &:hover{
       animation-duration: 1s;
       animation-timing-function: ease-in;
       animation-direction: alternate-reverse;
+    }
+  }
+
+  .images-display-container{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: calc(50% - (300px / 2));
+    left: 50%;
+
+    .image-wrapper{
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation: float 4s ease-in-out infinite alternate-reverse;
+
+      &:nth-of-type(1){
+        left: -50%;
+        width: 400px;
+        height: 400px;
+
+      }
+
+      &:nth-of-type(2){
+        left: -5%;
+        top: 10%;
+        width: 100px;
+        height: 100px;
+
+      }
+
+      img{
+        width: 100%;
+      }
     }
   }
   
@@ -595,6 +627,7 @@ body {
         -ms-flex-pack: center;
             justify-content: center;
     margin: 0 auto;
+    transition: 0.85s ease-out;
   }
   
   .section {
@@ -623,6 +656,7 @@ body {
     position: relative;
     transition: 0.64s cubic-bezier(0.215, 0.610, 0.355, 1);
     top: 0;
+    transition: 0.85s ease-out;
 }
 
 @media screen and ( min-width: 768px){
@@ -633,11 +667,22 @@ body {
 }	
 
 .intro-item-column{
-    Position: relative;
+  Position: relative;
 	top: 0px;
 	float: left;
 	width: 100%;
-	height: 100%;
+  height: 100%;
+  transition: 0.85s ease-out;
+
+  @for $i from 1 through 3{
+    &:nth-of-type(#{$i}){
+
+      transition: calc(0.85s + (#{$i} * 1.2)) ease-out;
+
+    }
+
+  }
+
 }
 
 .intro-item{
@@ -646,6 +691,8 @@ body {
     margin: 2em 5%;
     overflow: hidden;
     border-radius: 0.45em;
+    transition: 0.85s ease-out;
+
 }
 
 .intro-item:hover{
@@ -728,7 +775,7 @@ body {
     
     .item-wrapper{
       padding: 1em;
-      
+
       h1{
         padding: 0.25em;
         margin-bottom: 0.15em;
