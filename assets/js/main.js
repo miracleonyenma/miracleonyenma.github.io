@@ -57,18 +57,29 @@ $(document).ready(function(){
 
 
 function landingTxt(){
-	var i = 0;
-	var duration = 6000; //duration
-	var contentTxt = document.getElementById("content-txt"); //display text
-	var words = []; //array for possible words
-	var txt = document.querySelector(".txt-contain").children[0];
-	var pos = 0;
+	var i = 0,
+		duration = 6000; //duration
+		contentTxt = document.getElementById("content-txt"); //display text
+		contentImgMain = document.querySelector(".image-wrapper img.main"); //display img
+		words = []; //array for possible words
+		txt = document.querySelector(".txt-contain").children[0];
+		pos = 0;
+
+	var indicators = document.querySelectorAll("#indicator-circle2");
+		
 	//words list
 	words[0] ='Designer';
 	words[1] ='"Coder"';
 	words[2] ='Developer';
 	words[3] ='Techie';
 	
+	var images = [
+				'assets/images/alphas-laptop.png',
+				'assets/images/hoves.png',
+				'assets/images/helo.png',
+				'assets/images/airpods.png'
+	];
+		
 	var animeTl = anime.timeline({
 		easing: 'easeOutExpo',
 		direction: 'alternate-reverse',
@@ -82,12 +93,30 @@ function landingTxt(){
 		delay: 1050
 	});
 	animeTl.add({
+		targets: ".image-wrapper img",
+		translateY: "100%",
+		delay: 0
+	});
+
+
+	animeTl.add({
 		targets: "#content-txt",
 		changeBegin: 
 			function changetxt(){
+
+				anime({
+					targets: indicators[i],
+					easing: 'easeOutExpo',
+					duration: 1050,
+					strokeDashoffset: 120 - (120 * 100) / 100
+					// begin: function(){
+					// 	i
+					// }
+				})
 				
 				contentTxt.innerHTML = words[i];
 				contentTxt.dataset.name = words[i];
+				contentImgMain.setAttribute("src", images[i]);
 				var wordsLength = words.length -1;
 				if( i < wordsLength){
 					i++;
@@ -100,6 +129,10 @@ function landingTxt(){
 	animeTl.add({
 		targets: "#content-txt",
 		translateY: "0"
+	});
+	animeTl.add({
+		targets: ".image-wrapper img",
+		translateY: "0",
 	});
 	
 }

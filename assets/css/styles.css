@@ -266,7 +266,7 @@ svg {
   stroke-linejoin: round;
   stroke-miterlimit: 4;
   stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 25) / 100);
+  stroke-dashoffset: calc(120 - (120 * 0) / 100);
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -285,7 +285,7 @@ svg {
   stroke-linejoin: round;
   stroke-miterlimit: 4;
   stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 25) / 100);
+  stroke-dashoffset: calc(120 - (120 * 0) / 100);
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -304,26 +304,26 @@ svg {
   stroke-linejoin: round;
   stroke-miterlimit: 4;
   stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 25) / 100);
+  stroke-dashoffset: calc(120 - (120 * 0) / 100);
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
   -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
-.indicator-svg-container:nth-child(4) circle {
+.indicator-svg-container:nth-child(4) circle:nth-of-type(2) {
   opacity: 1;
   /*vector-effect:none;*/
   fill: none;
   fill-opacity: 1;
   fill-rule: nonzero;
-  stroke: var(--display-text);
+  stroke: var(--background-variant);
   stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
   stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 25) / 100);
+  stroke-dashoffset: calc(120 - (120 * 0) / 100);
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -352,11 +352,13 @@ svg {
   fill: none;
   fill-opacity: 1;
   fill-rule: nonzero;
-  stroke: #fff;
-  stroke-width: 8;
+  stroke: var(--display-text);
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
+  stroke-dasharray: 120;
+  stroke-dashoffset: calc(120 - (120 * 100) / 100);
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -364,20 +366,7 @@ svg {
 }
 
 #indicator-circle2 {
-  opacity: 1;
-  /*vector-effect:none;*/
-  fill: none;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: var(--display-text);
-  stroke-width: 8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-opacity: 1;
-  paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
+  stroke: var(--background-variant);
 }
 
 .hoves-display-container {
