@@ -81,7 +81,6 @@ function landingTxt(){
 				'assets/images/helo.png',
 				'assets/images/airpods.png'
 	];
-	console.log(index);
 
 	for(let i = 0; i < words.length; i++){
 		//create indicators
@@ -90,8 +89,6 @@ function landingTxt(){
 		indicatorSvgContainer[0].remove();
 		var newIndicators = document.querySelectorAll("#indicator-circle2");
 	}
-
-	console.log(index);
 
 	for(let i = 0; i < words.length; i++){
 		newIndicators[i].parentElement.parentElement.addEventListener("click", function currentSlide(){
@@ -106,9 +103,19 @@ function landingTxt(){
 		showSlides(slideIndex += n);
 	}
 
-	function currentSlide(n){
-		showDivs(slideIndex = n)
-	}
+
+	// setTimeout(function currentSlide(n){
+	// 	let i = 1;
+
+	// 	if( i < words.length){
+	// 		i++;
+	// 	}
+	// 	else{
+	// 		i= 0;
+	// 	}
+	// 	console.log(i)
+	// 	showSlides(slideIndex = i)
+	// }, duration);
 
 	function showSlides(n){
 		var i,
@@ -122,34 +129,38 @@ function landingTxt(){
 		if(n < 1){
 			slideIndex = words.length;
 		}
-		for( let i = 0; i < words.length; i++){
-			anime({
+		var dispTl = anime.timeline({
+			easing: 'easeOutExpo',
+			// autoplay: false,
+			direction: 'alternate-reverse',
+			loop: 1,
+		});
+
+		// for( let i = 0; i < words.length; i++){
+			dispTl.add({
 				targets: "#content-txt",
 				translateY: "100%",
 				easing: 'easeOutExpo',
 			});
-			anime({
+			dispTl.add({
 				targets: ".image-wrapper img",
 				translateY: "100%",
 				easing: 'easeOutExpo',
+				changeComplete: function(){
+					changetxt();
+				}
 			});
-		}
+		// }
 		for( let  i = 0; i < newIndicators.length; i++){
 			newIndicators[i].style.strokeDashoffset = 120 - (120 * 0) / 100 + "px";
 		}
-		var dispTl = anime.timeline({
-			easing: 'easeOutExpo',
-			autoplay: false
-			// direction: 'alternate-reverse',
-			// loop: true,
-		});
 		function changetxt(){
 			console.log(i);
 			contentTxt.innerHTML = words[slideIndex - 1];
 			contentTxt.dataset.name = words[slideIndex - 1];
 			contentImgMain.setAttribute("src", images[slideIndex - 1]);
 		}
-		newIndicators[slideIndex - 1].addEventListener("transitionend", function(){
+		// newIndicators[slideIndex - 1].addEventListener("transitionend", function(){
 			dispTl.add({
 				targets: "#content-txt",
 				translateY: "0",
@@ -158,10 +169,10 @@ function landingTxt(){
 				targets: ".image-wrapper img",
 				translateY: "0",
 			});
-			changetxt();
-			dispTl.play();
+			// changetxt();
+			// dispTl.play();
 			console.log("some")
-		})
+		// })
 		
 		newIndicators[slideIndex - 1].style.strokeDashoffset = "0px";
 		console.log(animeComplete)
