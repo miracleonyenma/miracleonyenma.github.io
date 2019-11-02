@@ -10,18 +10,18 @@ $(document).ready(function(){
 		triggerHook: 0.9
 	})
 	.setClassToggle('.footer-content', 'move-in') //add class to #footer
-	.addIndicators({
+	// .addIndicators({
 		
-	})
+	// })
 	.addTo(controller);
 	var galleryscene = new ScrollMagic.Scene({
 		triggerElement: '#gallery',
 		triggerHook: 0.7
 	})	
 	.setClassToggle('.intro-item-column', 'move-in-up') //add class to #footer
-	.addIndicators({
+	// .addIndicators({
 		
-	})
+	// })
 	.addTo(controller);
 
 
