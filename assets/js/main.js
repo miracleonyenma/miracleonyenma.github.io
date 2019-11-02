@@ -348,8 +348,27 @@ function landingTxt(){
 }
 
 
+//Using the MiParallax plugin
+
+function MiParallax(e){
+    var Milax = document.querySelectorAll(".Milax");
+    var rate;
+    for(i = 0; i < Milax.length; i++){
+        var scrolled = window.pageYOffset,
+            elRate = parseFloat(Milax[i].getAttribute("data-rate")),
+            translateY = Milax[i].getAttribute("");
+        if(Milax[i].getAttribute("data-rate") == null){
+           elRate = -2;
+        }
+        rate = scrolled / elRate;
+        console.log(rate);
+        Milax[i].style.transform = 'translate3d(0, '+ rate + 'px, 0px)';    
+    }
+    
+};
 
 
+window.addEventListener("scroll", MiParallax);
 window.addEventListener("load", landingTxt);
 
 
