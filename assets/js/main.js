@@ -61,6 +61,8 @@ function landingTxt(){
 		duration = 6000; //duration
 		contentTxt = document.getElementById("content-txt"); //display text
 		contentImgMain = document.querySelector(".image-wrapper img.main"); //display img
+		contentImgSub = document.querySelector(".image-wrapper img.sub"); //display img
+		contentImgSub2 = document.querySelector(".image-wrapper img.sub2"); //display img
 		words = []; //array for possible words
 		txt = document.querySelector(".txt-contain").children[0];
 		pos = 0;
@@ -76,10 +78,23 @@ function landingTxt(){
 	words[3] ='Techie';
 	
 	var images = [
+				'assets/images/ipad.png',
+				'assets/images/developement.png',	
 				'assets/images/alphas-laptop.png',
-				'assets/images/hoves.png',
-				'assets/images/helo.png',
-				'assets/images/airpods.png'
+				'assets/images/airpods-cont.png'
+	];
+	var subImages = [
+				'assets/images/stylus.png',
+				'assets/images/blob2.png',	
+				'assets/images/blob.png',
+				'assets/images/airpods-pod.png'
+	];
+
+	var subImages2 = [
+				'assets/images/ico.png',
+				'assets/images/box.png',	
+				'assets/images/ico.png',
+				'assets/images/icosphere.png'
 	];
 
 	for(let i = 0; i < words.length; i++){
@@ -139,13 +154,14 @@ function landingTxt(){
 		// for( let i = 0; i < words.length; i++){
 			dispTl.add({
 				targets: "#content-txt",
-				translateY: "100%",
+				translateY: "150%",
 				easing: 'easeOutExpo',
 			});
 			dispTl.add({
 				targets: ".image-wrapper img",
-				translateY: "100%",
+				translateY: "150%",
 				easing: 'easeOutExpo',
+				opacity: 0,
 				changeComplete: function(){
 					changetxt();
 				}
@@ -159,6 +175,8 @@ function landingTxt(){
 			contentTxt.innerHTML = words[slideIndex - 1];
 			contentTxt.dataset.name = words[slideIndex - 1];
 			contentImgMain.setAttribute("src", images[slideIndex - 1]);
+			contentImgSub.setAttribute("src", subImages[slideIndex - 1]);
+			contentImgSub2.setAttribute("src", subImages2[slideIndex - 1]);
 		}
 		// newIndicators[slideIndex - 1].addEventListener("transitionend", function(){
 			dispTl.add({
@@ -168,6 +186,7 @@ function landingTxt(){
 			dispTl.add({
 				targets: ".image-wrapper img",
 				translateY: "0",
+				opacity: 1
 			});
 			// changetxt();
 			// dispTl.play();
