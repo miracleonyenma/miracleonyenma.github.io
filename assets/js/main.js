@@ -369,6 +369,7 @@ function MiParallax(e){
 
 var docStyles = document.documentElement.style,
 	themesBtnsCnt = document.querySelector("#themes .themes-btns-cnt");
+	themesBtnsCntCnt = document.querySelector("#themes");
 function themeSelector(){
 	var background,
 		backgroundWriteUp,
@@ -379,7 +380,7 @@ function themeSelector(){
 		colors = [
 			[
 				["#232329"],
-				["rgba(255, 255, 255, 0.564)"],
+				["rgba(255, 255, 255, 0.364)"],
 				["#ffd431"],
 				["inset 0 10px 40px rgba(0, 0, 0, 0.5)"],
 				["#fff"],
@@ -388,7 +389,7 @@ function themeSelector(){
 			],
 			[
 				["#fff"],
-				["rgba(35, 35, 41, 0.658)"],
+				["rgba(35, 35, 41, 0.358)"],
 				["#ffd431"],
 				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
 				["#232329"],
@@ -397,7 +398,7 @@ function themeSelector(){
 			],
 			[
 				["#fff"],
-				["rgba(35, 35, 41, 0.658)"],
+				["rgba(35, 35, 41, 0.358)"],
 				["#3197ff"],
 				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
 				["#232329"],
@@ -406,7 +407,7 @@ function themeSelector(){
 			],
 			[
 				["#232329"],
-				["rgba(255, 255, 255, 0.564)"],
+				["rgba(255, 255, 255, 0.364)"],
 				["#3197ff"],
 				["inset 0 10px 40px rgba(0, 0, 0, 0.6)"],
 				["#fff"],
@@ -442,6 +443,17 @@ function themeSelector(){
 
 	console.log(themesBtnsCnt);
 }
+
+window.addEventListener("scroll", function(){
+	if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
+		console.log((window.innerHeight + window.scrollY) , document.body.offsetHeight);
+		themesBtnsCntCnt.style.opacity = "0";
+	}
+	else{
+		themesBtnsCntCnt.style.opacity = "1";
+	}
+	
+});
 
 
 window.addEventListener("scroll", MiParallax);

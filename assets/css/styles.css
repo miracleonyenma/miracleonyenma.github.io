@@ -16,19 +16,19 @@ Use the following CSS rules to specify these families: */
 
 :root {
   --background: #232329;
-  --background-write-up: rgba(255, 255, 255, 0.564);
+  --background-write-up: rgba(255, 255, 255, 0.364);
   --background-variant: #ffd431;
   --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.5);
   --display-text: #fff;
   --text: #232329;
   --background: #fff;
-  --background-write-up: rgba(35, 35, 41, 0.658);
+  --background-write-up: rgba(35, 35, 41, 0.358);
   --background-variant: #ffd431;
   --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.5);
   --display-text: #232329;
   --text: #fff;
   --background: #232329;
-  --background-write-up: rgba(255, 255, 255, 0.564);
+  --background-write-up: rgba(255, 255, 255, 0.364);
   --background-variant: #3197ff;
   --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
   --display-text: #fff;
@@ -678,7 +678,7 @@ svg {
 
 .section .section-header h1 {
   font-size: 400%;
-  color: rgba(170, 193, 199, 0.5);
+  color: var(--background-write-up);
   position: absolute;
   left: 5%;
 }
@@ -924,16 +924,18 @@ svg {
 
 #themes {
   position: fixed;
-  right: 0;
-  top: 50%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  left: 50%;
+  top: 100%;
+  -webkit-transform: translate(-50%, -100%) rotate(90deg);
+          transform: translate(-50%, -100%) rotate(90deg);
+  -webkit-transition: 0.34s ease-in;
+  transition: 0.34s ease-in;
 }
 
 #themes .themes-btns-cnt {
   padding: 6px 2px;
   border-radius: 32px;
-  background: rgba(170, 193, 199, 0.5);
+  background: var(--background-variant);
 }
 
 #themes .themes-btns-cnt button {
@@ -944,5 +946,33 @@ svg {
   margin: 8px;
   display: block;
   border-radius: 50%;
+}
+
+#themes:focus {
+  left: 50%;
+}
+
+@media screen and (min-width: 700px) {
+  #themes {
+    position: fixed;
+    left: 95%;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+  }
+  #themes .themes-btns-cnt {
+    padding: 6px 2px;
+    border-radius: 32px;
+    background: var(--background-variant);
+  }
+  #themes .themes-btns-cnt button {
+    width: 20px;
+    height: 20px;
+    border: 4px;
+    border-style: solid;
+    margin: 8px;
+    display: block;
+    border-radius: 50%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
