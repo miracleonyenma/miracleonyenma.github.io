@@ -10,18 +10,18 @@ $(document).ready(function(){
 		triggerHook: 0.9
 	})
 	.setClassToggle('.footer-content', 'move-in') //add class to #footer
-	// .addIndicators({
+	.addIndicators({
 		
-	// })
+	})
 	.addTo(controller);
 	var galleryscene = new ScrollMagic.Scene({
-		triggerElement: '#sct1',
+		triggerElement: '#gallery',
 		triggerHook: 0.7
 	})	
 	.setClassToggle('.intro-item-column', 'move-in-up') //add class to #footer
-	// .addIndicators({
+	.addIndicators({
 		
-	// })
+	})
 	.addTo(controller);
 
 
@@ -367,10 +367,86 @@ function MiParallax(e){
     
 };
 
+var docStyles = document.documentElement.style,
+	themesBtnsCnt = document.querySelector("#themes .themes-btns-cnt");
+function themeSelector(){
+	var background,
+		backgroundWriteUp,
+		backgroundVariant,
+		shadow,
+		displayText,
+		text,
+		colors = [
+			[
+				["#232329"],
+				["rgba(255, 255, 255, 0.564)"],
+				["#ffd431"],
+				["inset 0 10px 40px rgba(0, 0, 0, 0.5)"],
+				["#fff"],
+				["#232329"]
+	
+			],
+			[
+				["#fff"],
+				["rgba(35, 35, 41, 0.658)"],
+				["#ffd431"],
+				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
+				["#232329"],
+				["#fff"]
+
+			],
+			[
+				["#fff"],
+				["rgba(35, 35, 41, 0.658)"],
+				["#3197ff"],
+				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
+				["#232329"],
+				["#fff"]
+
+			],
+			[
+				["#232329"],
+				["rgba(255, 255, 255, 0.564)"],
+				["#3197ff"],
+				["inset 0 10px 40px rgba(0, 0, 0, 0.6)"],
+				["#fff"],
+				["#232329"]
+
+			]
+		];
+
+	
+	for(let i = 0; i < colors.length; i++){
+		var themeBtn = [],
+			newThemeBtn;
+		
+
+		themeBtn[i] = document.createElement("button");
+		themesBtnsCnt.appendChild(themeBtn[i]);
+		newThemeBtn = themesBtnsCnt.querySelectorAll("button");
+		newThemeBtn[i].style.background = colors[i][2];
+		newThemeBtn[i].style.borderColor = colors[i][0];
+
+		newThemeBtn[i].addEventListener("click", function(){
+
+			docStyles.setProperty("--background", colors[i][0]);
+			docStyles.setProperty("--background-write-up", colors[i][1]);
+			docStyles.setProperty("--background-variant", colors[i][2]);
+			docStyles.setProperty("--shadow", colors[i][3]);
+			docStyles.setProperty("--display-text", colors[i][4]);
+			docStyles.setProperty("--text", colors[i][5]);
+
+		})
+
+	}
+
+	console.log(themesBtnsCnt);
+}
+
 
 window.addEventListener("scroll", MiParallax);
 window.addEventListener("load", landingTxt);
-
+window.addEventListener("load", themeSelector);
 
 
 

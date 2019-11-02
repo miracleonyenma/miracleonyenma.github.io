@@ -27,12 +27,19 @@ Use the following CSS rules to specify these families: */
   --shadow: inset 0 10px 40px rgba(255, 255, 255, 0.5);
   --display-text: #232329;
   --text: #fff;
+  --background: #232329;
+  --background-write-up: rgba(255, 255, 255, 0.564);
+  --background-variant: #3197ff;
+  --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.6);
+  --display-text: #fff;
+  --text: #232329;
 }
 
 body {
   font-family: 'PT Sans', sans-serif;
   font-family: 'Playfair Display', serif;
   font-family: 'Noto Sans JP', sans-serif;
+  background: var(--background);
 }
 
 button {
@@ -43,7 +50,6 @@ button {
   overflow-y: scroll;
   margin: auto;
   /*padding: 1%;*/
-  background-color: var(--background-variant);
 }
 
 #body::-webkit-scrollbar {
@@ -654,42 +660,38 @@ svg {
 }
 
 /*######## sections ########*/
-.section1 {
+.section {
   width: 100%;
   height: 100%;
   position: relative;
   background-color: var(--background);
-  overflow-y: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  display: table;
   margin: 0 auto;
   -webkit-transition: 0.85s ease-out;
   transition: 0.85s ease-out;
 }
 
-.section {
-  Width: 90%;
-  margin: 20px auto;
-  Padding: 0 0;
-  background-color: var(--background-write-up);
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
-  position: relative;
+.section .section-header {
+  width: 100%;
+  height: 4em;
+}
+
+.section .section-header h1 {
+  font-size: 400%;
+  color: rgba(170, 193, 199, 0.5);
+  position: absolute;
+  left: 5%;
 }
 
 @media screen and (min-width: 700px) {
   .section {
-    Width: 72%;
+    Width: 100%;
     margin: 20px auto;
     Padding: 0 0;
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.12);
     position: relative;
+  }
+  .section .section-header h1 {
+    font-size: 500%;
   }
 }
 
@@ -918,5 +920,29 @@ svg {
 .move-in-up {
   -webkit-transform: translateY(0);
           transform: translateY(0);
+}
+
+#themes {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+#themes .themes-btns-cnt {
+  padding: 6px 2px;
+  border-radius: 32px;
+  background: rgba(170, 193, 199, 0.5);
+}
+
+#themes .themes-btns-cnt button {
+  width: 20px;
+  height: 20px;
+  border: 4px;
+  border-style: solid;
+  margin: 8px;
+  display: block;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=styles.css.map */
