@@ -102,7 +102,8 @@ function landingTxt(){
 		var indicatorClone = indicatorSvgContainer[0].cloneNode(true);
         indicatorContainer.appendChild(indicatorClone);
 		indicatorSvgContainer[0].remove();
-		var newIndicators = document.querySelectorAll("#indicator-circle2");
+		var newIndicators = document.querySelectorAll("#indicator-circle2"),
+			newIndicatorSvgContainer = document.querySelectorAll(".indicator-svg-container");
 	}
 
 	for(let i = 0; i < words.length; i++){
@@ -110,6 +111,7 @@ function landingTxt(){
 			console.log(`indicator${i + 1} clicked`);
 			showSlides(slideIndex = i + 1);
 		});
+		newIndicatorSvgContainer[i].setAttribute("data-tag", words[i]);
 	}
 	var slideIndex = 1;
 	showSlides(slideIndex);
@@ -384,7 +386,8 @@ function themeSelector(){
 				["#ffd431"],
 				["inset 0 10px 40px rgba(0, 0, 0, 0.5)"],
 				["#fff"],
-				["#232329"]
+				["#232329"],
+				["Yelo-Dark"]
 	
 			],
 			[
@@ -393,7 +396,8 @@ function themeSelector(){
 				["#ffd431"],
 				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
 				["#232329"],
-				["#fff"]
+				["#fff"],
+				["Yelo-Light"]
 
 			],
 			[
@@ -402,7 +406,8 @@ function themeSelector(){
 				["#3197ff"],
 				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
 				["#232329"],
-				["#fff"]
+				["#fff"],
+				["Blu-Light"]
 
 			],
 			[
@@ -411,7 +416,8 @@ function themeSelector(){
 				["#3197ff"],
 				["inset 0 10px 40px rgba(0, 0, 0, 0.6)"],
 				["#fff"],
-				["#232329"]
+				["#232329"],
+				["Blu-Dark"]
 
 			]
 		];
@@ -427,6 +433,8 @@ function themeSelector(){
 		newThemeBtn = themesBtnsCnt.querySelectorAll("button");
 		newThemeBtn[i].style.background = colors[i][2];
 		newThemeBtn[i].style.borderColor = colors[i][0];
+		newThemeBtn[i].setAttribute("data-tag", colors[i][6]);
+
 
 		newThemeBtn[i].addEventListener("click", function(){
 
