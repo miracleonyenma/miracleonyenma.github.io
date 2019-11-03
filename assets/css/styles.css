@@ -206,7 +206,19 @@ svg {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 50vh 50vh;
+      grid-template-rows: 50vh 50vh;
   overflow: hidden;
+}
+
+@media screen and (min-width: 700px) {
+  .hoves-slides-container {
+    -ms-grid-rows: none;
+        grid-template-rows: none;
+  }
+  .hoves-slides-container .indicator-container {
+    grid-row: unset;
+  }
 }
 
 .indicator-container {
@@ -215,7 +227,13 @@ svg {
   -ms-flex-item-align: center;
   -ms-grid-row-align: center;
   align-self: center;
+  -ms-grid-row: 2;
+  grid-row: 2;
   z-index: 3;
+}
+
+.indicator-container .indicators-container {
+  position: relative;
 }
 
 .animate-in:nth-child(1) {
@@ -509,7 +527,7 @@ svg {
 
 .overlay-content {
   position: absolute;
-  left: 50%;
+  left: 20%;
   top: 50%;
   color: var(--display-text);
   -webkit-transform: translate(-5%, -50%);
@@ -955,7 +973,7 @@ svg {
 @media screen and (min-width: 700px) {
   #themes {
     position: fixed;
-    left: 95%;
+    left: calc(95% - 10px);
     top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
