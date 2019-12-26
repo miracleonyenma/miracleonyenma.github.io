@@ -20,7 +20,7 @@ Use the following CSS rules to specify these families: */
     --shadow: inset 0 10px 40px rgba(0, 0, 0, 0.5);
     --display-text: #fff;
     --text: #232329;
-
+    --width: 0;
     
     // --background: #fff;
     // --background-write-up: rgba(35, 35, 41, 0.358);
@@ -77,12 +77,59 @@ body {
     background-color: var(--background-variant);
   }
   
-  .hoves-preloader {
-    Position: fixed;
+  #hoves-preloader {
+    position: fixed;
     width: 100%;
     Height: 100vh;
     background-color: #383737;
     z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    // span{
+    //   color: var(--display-text);
+    //   font-size: 68px;
+
+    //   &:after{
+    //     content: "%";
+    //   }
+    // }
+
+    .outer{
+      min-width: 100px;
+      width: 60%;
+      height: 30px;
+      background: var(--background);
+      border-radius: 70px;
+      overflow: hidden;
+      position: relative;
+
+      .inner{
+        width: 0;
+        width: var(--width);
+        height: 100%;
+        background: var(--background-variant);    
+        position: relative;
+        border-radius: 70px;
+        transition: width 0.8s ease-in;
+
+
+        &::before{
+          content: "";
+          width: 50%;
+          height: 20%;
+          position: absolute;
+          background: rgba(255, 255, 255, 0.329);
+          -webkit-transform: translate(24%, 8%);
+          transform: translate(48%, 8%);
+          top: 10px;
+          border-radius: 70px;
+        }
+      }
+      
+    }
+
   }
   
   .main-body {
@@ -374,7 +421,7 @@ body {
     margin: 8%;
     width: 60px;
     height: 60px;
-    Position: relative;
+    position: relative;
     text-align: center;
     transition: 0.72s cubic-bezier(0, 0, 1, 1);
     -webkit-transition: 0.72s cubic-bezier(0, 0, 1, 1);
@@ -1004,13 +1051,14 @@ body {
     transform: translateY(0);
   }
 
-  .gallery-def{
-    // opacity: 0; 
-  }
-  .column-def{
-    transform: translateY(50%); 
-    position: relative;
-  }
+  // .gallery-def{
+  //   // opacity: 0; 
+  // }
+  // .column-def{
+  //   transform: translateY(50%); 
+  //   position: relative;
+  // }
+
   .move-in-up{
     transform: translateY(0); 
   }

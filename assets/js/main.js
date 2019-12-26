@@ -1,49 +1,32 @@
 $(document).ready(function(){
 	
-	//Init ScrollMagic
-	var controller = new ScrollMagic.Controller();
+	// //Init ScrollMagic
+	// var controller = new ScrollMagic.Controller();
 	
-	//Build a scene
+	// //Build a scene
 	
-	var firstscene = new ScrollMagic.Scene({
-		triggerElement: '#footer',
-		triggerHook: 0.9
-	})
-	.setClassToggle('.footer-content', 'move-in') //add class to #footer
-	// .addIndicators({
-		
+	// var firstscene = new ScrollMagic.Scene({
+	// 	triggerElement: '#footer',
+	// 	triggerHook: 0.9
 	// })
-	.addTo(controller);
-	var galleryscene = new ScrollMagic.Scene({
-		triggerElement: '#gallery',
-		triggerHook: 0.7
-	})	
-	.setClassToggle('.intro-item-column', 'move-in-up') //add class to #footer
-	// .addIndicators({
+	// .setClassToggle('.footer-content', 'move-in') //add class to #footer
+	// // .addIndicators({
 		
-	// })
-	.addTo(controller);
+	// // })
+	// .addTo(controller);
+	// var galleryscene = new ScrollMagic.Scene({
+	// 	triggerElement: '#gallery',
+	// 	triggerHook: 0.7
+	// })	
+	// .setClassToggle('.intro-item-column', 'move-in-up') //add class to #footer
+	// // .addIndicators({
+		
+	// // })
+	// .addTo(controller);
 
 
 	//animate words
-	var wordsTxt = $('#content-txt');
-	var blob = document.getElementById("blob");
-	var loadTl = new TimelineMax();
-
-	// var indicatorsWrap = document.getElementById("indicator-container");
-	// var indicators = document.getElementById("indicator-container").childNodes;
-	// var indicators1 = indicators[0];
-	// var indicators2 = indicators[1];
-	// var indicators3 = indicators[2];
-	// var indicators4 = indicators[3];
-	var indicators = $("#indicator-container");
-	var loadBlind = $(".hoves-preloader");
-	
-	loadTl
-	.to(loadBlind, 1.8, {y:"-100%"})
-	.from(blob, 1.8, {autoAlpha: 0, y: "90%"}, delay=1)
-	// .from(wordsTxt, 1.8, {autoAlpha: 0, x: "-90%"}, delay=1)
-
+	// var wordsTxt = $('#content-txt');
 
 
 
@@ -55,7 +38,101 @@ $(document).ready(function(){
 });
 
 
+var blob = document.getElementById("blob");
+var loader = document.querySelector("#loader")
+var docStyles = document.documentElement.style,
+	themesBtnsCnt = document.querySelector("#themes .themes-btns-cnt"),
+	themesBtnsCntCnt = document.querySelector("#themes");
+var colors = [
+	[
+		["#232329"],
+		["rgba(255, 255, 255, 0.364)"],
+		["#ffd431"],
+		["inset 0 10px 40px rgba(0, 0, 0, 0.5)"],
+		["#fff"],
+		["#232329"],
+		["Yelo-Dark"]
 
+	],
+	[
+		["#fff"],
+		["rgba(35, 35, 41, 0.358)"],
+		["#ffd431"],
+		["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
+		["#232329"],
+		["#fff"],
+		["Yelo-Light"]
+
+	],
+	[
+		["#fff"],
+		["rgba(35, 35, 41, 0.358)"],
+		["#3197ff"],
+		["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
+		["#232329"],
+		["#fff"],
+		["Blu-Light"]
+
+	],
+	[
+		["#232329"],
+		["rgba(255, 255, 255, 0.364)"],
+		["#3197ff"],
+		["inset 0 10px 40px rgba(0, 0, 0, 0.6)"],
+		["#fff"],
+		["#232329"],
+		["Blu-Dark"]
+
+	]
+];
+
+function setStorage(val){
+	for(let k in val){
+		localStorage.setItem(val, val[k]);
+		console.log(val, val[k]);
+	};
+};
+
+function setProp(el, val){
+	for(let k in val){
+		el.setProperty(k, val[k]);
+	};
+};
+
+// loader functionality
+function loaderFunc(val){
+	docStyles.setProperty("--width", val + "%");
+	loader.style.width = val + "%";
+};
+
+// theme selector functionality
+function checkStorage(){
+    if( localStorage.getItem("theme") === null){
+        localStorage.setItem("theme", JSON.stringify(colors[0]));
+    };
+	theme = JSON.parse(localStorage.getItem("theme"));
+	console.log(theme);
+	setTheme(theme);
+};
+
+//set theme functionality
+function setTheme(colors){
+	localStorage.setItem("theme", colors);
+	console.log(localStorage.getItem("theme"));
+
+	setProp(docStyles, {"--background" : colors[0],
+						"--background-write-up" : colors[1],
+						"--background-variant" : colors[2],
+						"--shadow" : colors[3],
+						"--display-text" : colors[4],
+						"--text" : colors[5]
+						});
+	
+	setStorage({"background" : colors[0], "backgroundWriteUp" : colors[1], "backgroundVariant" : colors[2], "shadow" : colors[3], "displayText" : colors[4], "text" : colors[5]});
+	localStorage.setItem("theme", JSON.stringify(colors));
+}
+
+// landing text functionality
 function landingTxt(){
 	var index = 0,
 		duration = 6000; //duration
@@ -96,6 +173,18 @@ function landingTxt(){
 				'assets/images/ico.png',
 				'assets/images/icosphere.png'
 	];
+
+	//precahe images by assigning them to an image object to be loaded before they are used
+	var allImages = images.concat(subImages, subImages2);
+
+	function precache(){
+		for(let i = 0; i < allImages.length; i++){
+			let img = [];
+			img[i] = new Image();
+			img[i].src = allImages[i];
+		};
+	};	
+	precache();
 
 	for(let i = 0; i < words.length; i++){
 		//create indicators
@@ -369,58 +458,13 @@ function MiParallax(e){
     
 };
 
-var docStyles = document.documentElement.style,
-	themesBtnsCnt = document.querySelector("#themes .themes-btns-cnt");
-	themesBtnsCntCnt = document.querySelector("#themes");
 function themeSelector(){
 	var background,
 		backgroundWriteUp,
 		backgroundVariant,
 		shadow,
 		displayText,
-		text,
-		colors = [
-			[
-				["#232329"],
-				["rgba(255, 255, 255, 0.364)"],
-				["#ffd431"],
-				["inset 0 10px 40px rgba(0, 0, 0, 0.5)"],
-				["#fff"],
-				["#232329"],
-				["Yelo-Dark"]
-	
-			],
-			[
-				["#fff"],
-				["rgba(35, 35, 41, 0.358)"],
-				["#ffd431"],
-				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
-				["#232329"],
-				["#fff"],
-				["Yelo-Light"]
-
-			],
-			[
-				["#fff"],
-				["rgba(35, 35, 41, 0.358)"],
-				["#3197ff"],
-				["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
-				["#232329"],
-				["#fff"],
-				["Blu-Light"]
-
-			],
-			[
-				["#232329"],
-				["rgba(255, 255, 255, 0.364)"],
-				["#3197ff"],
-				["inset 0 10px 40px rgba(0, 0, 0, 0.6)"],
-				["#fff"],
-				["#232329"],
-				["Blu-Dark"]
-
-			]
-		];
+		text;
 
 	
 	for(let i = 0; i < colors.length; i++){
@@ -436,16 +480,7 @@ function themeSelector(){
 		newThemeBtn[i].setAttribute("data-tag", colors[i][6]);
 
 
-		newThemeBtn[i].addEventListener("click", function(){
-
-			docStyles.setProperty("--background", colors[i][0]);
-			docStyles.setProperty("--background-write-up", colors[i][1]);
-			docStyles.setProperty("--background-variant", colors[i][2]);
-			docStyles.setProperty("--shadow", colors[i][3]);
-			docStyles.setProperty("--display-text", colors[i][4]);
-			docStyles.setProperty("--text", colors[i][5]);
-
-		})
+		newThemeBtn[i].addEventListener("click", function(){setTheme(colors[i])});
 
 	}
 
@@ -463,10 +498,31 @@ window.addEventListener("scroll", function(){
 	
 });
 
+document.addEventListener('readystatechange', e => {
+	console.log(e.target.readyState);
+	if(e.target.readyState === "interactive"){
+		loaderFunc(66.67);
+	}
+	if(e.target.readyState === "complete"){
+		loaderFunc(100);
 
+		var loadTl = new TimelineMax();
+		var loadBlind = document.querySelector("#hoves-preloader");
+		
+		loadTl
+		.to(loadBlind, 1.8, {y:"-100%"}, delay=1)
+		.from(blob, 1.8, {autoAlpha: 0, y: "90%"}, delay=1)
+		.from(wordsTxt, 1.8, {autoAlpha: 0, x: "-90%"}, delay=1)
+
+
+
+	}
+});
+window.addEventListener("load", loaderFunc(33.33));
 window.addEventListener("scroll", MiParallax);
 window.addEventListener("load", landingTxt);
 window.addEventListener("load", themeSelector);
+window.addEventListener("load", checkStorage);
 
 
 
