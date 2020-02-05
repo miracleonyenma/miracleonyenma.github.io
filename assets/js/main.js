@@ -42,7 +42,8 @@ var blob = document.getElementById("blob");
 var loader = document.querySelector("#loader")
 var docStyles = document.documentElement.style,
 	themesBtnsCnt = document.querySelector("#themes .themes-btns-cnt"),
-	themesBtnsCntCnt = document.querySelector("#themes");
+	themesBtnsCntCnt = document.querySelector("#themes"),
+	optionsBtns = document.querySelectorAll(".item-options");
 var colors = [
 	[
 		["#232329"],
@@ -438,9 +439,7 @@ function landingTxt(){
 	
 }
 
-
 //Using the MiParallax plugin
-
 function MiParallax(e){
     var Milax = document.querySelectorAll(".Milax");
     var rate;
@@ -487,6 +486,22 @@ function themeSelector(){
 	console.log(themesBtnsCnt);
 }
 
+
+function galleryOptions(e){
+	console.log(e.target.parentElement);
+	var itemOptionsCont = e.target.parentElement;
+	if(itemOptionsCont.querySelector(".options")){
+		itemOptionsCont.classList.toggle("options-cont-display");
+		
+		itemOptionsCont.querySelector(".options").classList.toggle("options-display");
+	}
+	// for(let x = 0; x < itemOptionsCont; x++){
+	// 	itemOptionsCont.querySelectorAll(".options button")[i].classList.toggle("display");
+	// }
+	//toggle options display
+	
+}
+
 window.addEventListener("scroll", function(){
 	if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight){
 		console.log((window.innerHeight + window.scrollY) , document.body.offsetHeight);
@@ -498,6 +513,7 @@ window.addEventListener("scroll", function(){
 	
 });
 
+//loader functionality
 document.addEventListener('readystatechange', e => {
 	console.log(e.target.readyState);
 	if(e.target.readyState === "interactive"){
@@ -518,6 +534,10 @@ document.addEventListener('readystatechange', e => {
 
 	}
 });
+//options buttons
+for(i = 0; i < optionsBtns.length; i++){
+	optionsBtns[i].addEventListener("click", galleryOptions);
+}
 window.addEventListener("load", loaderFunc(33.33));
 window.addEventListener("scroll", MiParallax);
 window.addEventListener("load", landingTxt);
