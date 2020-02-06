@@ -26,7 +26,7 @@ $(document).ready(function(){
 
 
 	//animate words
-	// var wordsTxt = $('#content-txt');
+	var wordsTxt = $('#content-txt');
 
 
 
