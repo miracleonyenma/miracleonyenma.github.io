@@ -25,8 +25,6 @@ $(document).ready(function(){
 	// .addTo(controller);
 
 
-	//animate words
-	var wordsTxt = $('#content-txt');
 
 
 
@@ -37,6 +35,8 @@ $(document).ready(function(){
 	
 });
 
+//animate words
+var wordsTxt = $('#content-txt');
 
 var blob = document.getElementById("blob");
 var loader = document.querySelector("#loader")
