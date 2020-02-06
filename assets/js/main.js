@@ -244,20 +244,22 @@ function landingTxt(){
 		});
 
 		// for( let i = 0; i < words.length; i++){
-			dispTl.add({
-				targets: "#content-txt",
-				translateY: "150%",
-				easing: 'easeOutExpo',
-			});
-			dispTl.add({
-				targets: ".image-wrapper img",
-				translateY: "150%",
-				easing: 'easeOutExpo',
-				opacity: 0,
-				changeComplete: function(){
-					changetxt();
-				}
-			});
+
+		dispTl.add({
+			targets: "#content-txt",
+			translateY: "150%",
+			easing: 'easeOutExpo',
+		});
+		dispTl.add({
+			targets: ".image-wrapper img",
+			translateY: "150%",
+			easing: 'easeOutExpo',
+			opacity: 0,
+			changeComplete: function(){
+				changetxt();
+			}
+		});
+
 		// }
 		for( let  i = 0; i < newIndicators.length; i++){
 			newIndicators[i].style.strokeDashoffset = 120 - (120 * 0) / 100 + "px";
@@ -489,7 +491,25 @@ function themeSelector(){
 
 function galleryOptions(e){
 	console.log(e.target.parentElement);
-	var itemOptionsCont = e.target.parentElement;
+
+	var itemOptionsCont = e.target.parentElement,
+		introItem,
+		itemOverlay,
+		expandBtn = itemOptionsCont.querySelector(".expand"),
+		detailsBtn = itemOptionsCont.querySelector(".details")
+	;
+
+	//get the .intro-item
+	if(itemOptionsCont.parentElement) {
+		introItem = itemOptionsCont.parentElement;
+		itemOverlay = introItem.querySelector(".item-overlay");
+		console.log(introItem);
+	}
+
+	detailsBtn.addEventListener("click", ()=>{
+		itemOverlay.classList.toggle("show-overlay");
+	})
+	console.log(expandBtn, detailsBtn);
 	if(itemOptionsCont.querySelector(".options")){
 		itemOptionsCont.classList.toggle("options-cont-display");
 		
@@ -501,6 +521,7 @@ function galleryOptions(e){
 	//toggle options display
 	
 }
+
 
 window.addEventListener("scroll", function(){
 	if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight){

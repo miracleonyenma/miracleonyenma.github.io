@@ -953,14 +953,18 @@ body {
 	background-color: transparent;
 	transition: background-color 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
-  &:hover{
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius:8px;
-    backdrop-filter: blur(5px);
-  }
+  // &:hover{
+  //   background-color: rgba(0, 0, 0, 0.6);
+  //   border-radius:8px;
+  //   backdrop-filter: blur(5px);
+  // }
 }
 
-
+.show-overlay{
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius:8px;
+  backdrop-filter: blur(5px);
+}
 
 .item-content{
   position: absolute;
@@ -997,7 +1001,7 @@ body {
 }
    
    
-.item-overlay:hover .item-content {
+.show-overlay .item-content {
 	left: 50%;
 	top: 50%;
 	width: 96%;
