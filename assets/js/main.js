@@ -147,7 +147,6 @@ function landingTxt(){
 
 	var indicatorContainer = document.querySelector("#indicator-container");
 	var indicatorSvgContainer = document.querySelectorAll(".indicator-svg-container");
-	var indicators = document.querySelectorAll("#indicator-circle2");
 		
 	//words list
 	words[0] ='Designer';
@@ -194,6 +193,9 @@ function landingTxt(){
 		indicatorSvgContainer[0].remove();
 		var newIndicators = document.querySelectorAll("#indicator-circle2"),
 			newIndicatorSvgContainer = document.querySelectorAll(".indicator-svg-container");
+
+		docStyles.setProperty("--circle-length1", newIndicatorSvgContainer[0].querySelector("#indicator-circle1").getTotalLength() + "px");
+		docStyles.setProperty("--circle-length2", newIndicatorSvgContainer[0].querySelector("#indicator-circle2").getTotalLength() + "px");
 	}
 
 	for(let i = 0; i < words.length; i++){
@@ -263,7 +265,7 @@ function landingTxt(){
 
 		// }
 		for( let  i = 0; i < newIndicators.length; i++){
-			newIndicators[i].style.strokeDashoffset = 120 - (120 * 0) / 100 + "px";
+			newIndicators[i].style.strokeDashoffset = "var(--circle-length2)";
 		}
 		function changetxt(){
 			console.log(i);

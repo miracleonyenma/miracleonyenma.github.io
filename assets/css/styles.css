@@ -234,6 +234,7 @@ svg {
 
 .hoves-slides-container {
   top: 50%;
+  padding: 2em 0;
   position: absolute;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -295,82 +296,6 @@ svg {
   }
 }
 
-.indicator-svg-container:nth-child(1) circle {
-  opacity: 1;
-  /*vector-effect:none;*/
-  fill: none;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: #fff;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 0) / 100);
-  stroke-opacity: 1;
-  paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
-.indicator-svg-container:nth-child(2) circle {
-  opacity: 1;
-  /*vector-effect:none;*/
-  fill: none;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: #fff;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 0) / 100);
-  stroke-opacity: 1;
-  paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
-.indicator-svg-container:nth-child(3) circle {
-  opacity: 1;
-  /*vector-effect:none;*/
-  fill: none;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: var(--display-text);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 0) / 100);
-  stroke-opacity: 1;
-  paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
-.indicator-svg-container:nth-child(4) circle:nth-of-type(2) {
-  opacity: 1;
-  /*vector-effect:none;*/
-  fill: none;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: var(--background-variant);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 0) / 100);
-  stroke-opacity: 1;
-  paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
 .indicator-svg-container {
   margin: 8%;
   width: 60px;
@@ -422,8 +347,8 @@ svg {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-miterlimit: 4;
-  stroke-dasharray: 120;
-  stroke-dashoffset: calc(120 - (120 * 100) / 100);
+  stroke-dasharray: var(--circle-length1);
+  stroke-dashoffset: calc(var(--circle-length1) - (var(--circle-length1) * 100) / 100);
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
@@ -431,7 +356,21 @@ svg {
 }
 
 #indicator-circle2 {
+  opacity: 1;
+  fill: none;
+  fill-opacity: 1;
+  fill-rule: nonzero;
   stroke: var(--background-variant);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 4;
+  stroke-dasharray: var(--circle-length1);
+  stroke-dashoffset: calc(var(--circle-length1) - (var(--circle-length1) * 0) / 100);
+  stroke-opacity: 1;
+  paint-order: markers stroke fill;
+  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
+  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 @media screen and (min-width: 700px) {
