@@ -14,11 +14,6 @@ Use the following CSS rules to specify these families: */
           box-sizing: border-box;
 }
 
-.main-body * {
-  -webkit-transition: 0.32s ease-in;
-  transition: 0.32s ease-in;
-}
-
 button {
   cursor: pointer;
 }

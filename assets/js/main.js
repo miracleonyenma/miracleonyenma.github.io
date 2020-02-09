@@ -136,13 +136,13 @@ function setTheme(colors){
 // landing text functionality
 function landingTxt(){
 	var index = 0,
-		duration = 6000; //duration
-		contentTxt = document.getElementById("content-txt"); //display text
-		contentImgMain = document.querySelector(".image-wrapper img.main"); //display img
-		contentImgSub = document.querySelector(".image-wrapper img.sub"); //display img
-		contentImgSub2 = document.querySelector(".image-wrapper img.sub2"); //display img
-		words = []; //array for possible words
-		txt = document.querySelector(".txt-contain").children[0];
+		duration = 6000,//duration
+		contentTxt = document.getElementById("content-txt"), //display text
+		contentImgMain = document.querySelector(".image-wrapper img.main"), //display img
+		contentImgSub = document.querySelector(".image-wrapper img.sub"), //display img
+		contentImgSub2 = document.querySelector(".image-wrapper img.sub2"), //display img
+		words = [], //array for possible words
+		txt = document.querySelector(".txt-contain").children[0],
 		pos = 0;
 
 	var indicatorContainer = document.querySelector("#indicator-container");
@@ -203,6 +203,7 @@ function landingTxt(){
 		});
 		newIndicatorSvgContainer[i].setAttribute("data-tag", words[i]);
 	}
+
 	var slideIndex = 1;
 	showSlides(slideIndex);
 
@@ -549,7 +550,7 @@ document.addEventListener('readystatechange', e => {
 		loadTl
 		.to(loadBlind, 1.8, {y:"-100%"}, delay=1)
 		.from(blob, 1.8, {autoAlpha: 0, y: "90%"}, delay=1)
-		.from(wordsTxt, 1.8, {autoAlpha: 0, x: "-90%"}, delay=1)
+		// .from(wordsTxt, 1.8, {autoAlpha: 0, x: "-90%"}, delay=1)
 
 
 
