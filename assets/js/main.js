@@ -1,39 +1,3 @@
-$(document).ready(function(){
-	
-	// //Init ScrollMagic
-	// var controller = new ScrollMagic.Controller();
-	
-	// //Build a scene
-	
-	// var firstscene = new ScrollMagic.Scene({
-	// 	triggerElement: '#footer',
-	// 	triggerHook: 0.9
-	// })
-	// .setClassToggle('.footer-content', 'move-in') //add class to #footer
-	// // .addIndicators({
-		
-	// // })
-	// .addTo(controller);
-	// var galleryscene = new ScrollMagic.Scene({
-	// 	triggerElement: '#gallery',
-	// 	triggerHook: 0.7
-	// })	
-	// .setClassToggle('.intro-item-column', 'move-in-up') //add class to #footer
-	// // .addIndicators({
-		
-	// // })
-	// .addTo(controller);
-
-
-
-
-
-	//Timeline to animate out and in
-
-	
-	
-	
-});
 
 //animate words
 var wordsTxt = $('#content-txt');

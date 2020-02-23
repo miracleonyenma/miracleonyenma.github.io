@@ -904,6 +904,28 @@ svg {
   margin: 0 0;
 }
 
+.item-options-cont .options button.details svg {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+
+.item-options-cont .options button.details svg path {
+  stroke: var(--text);
+  stroke-width: 10px;
+}
+
+.item-options-cont .options button.expand svg {
+  position: relative;
+  height: 20px;
+  width: 20px;
+}
+
+.item-options-cont .options button.expand svg path {
+  stroke: var(--text);
+  stroke-width: 10px;
+}
+
 .item-options-cont .options-display {
   display: block;
 }
@@ -926,6 +948,15 @@ svg {
           transform: translateX(-100%) scale(1.1);
 }
 
+.item-options-cont .item-options svg {
+  position: relative;
+  pointer-events: none;
+}
+
+.item-options-cont .item-options svg path {
+  fill: #fff;
+}
+
 .options-cont-display {
   -webkit-transform: translate(-100%, -75%);
           transform: translate(-100%, -75%);
@@ -933,8 +964,13 @@ svg {
   color: var(--text);
 }
 
+.options-cont-display .item-options svg path {
+  fill: var(--text);
+}
+
 .options-cont-display .options button {
   color: var(--text);
+  fill: var(--text);
 }
 
 .options-cont-display .item-options {
