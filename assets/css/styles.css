@@ -539,7 +539,7 @@ svg {
   overflow: hidden;
   width: 500px;
   height: 100px;
-  font-family: 'Muli', "Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: 'Muli', "Kessel 105", "Helvetica Neue", Helvetica, Arial, sans-serif;
   animation: float 4s ease-out infinite alternate-reverse;
 }
 
@@ -698,6 +698,32 @@ svg {
   left: 5%;
 }
 
+.section.about .section-content {
+  width: 100%;
+  padding: 1em 10%;
+}
+
+.section.about .section-content .intro {
+  text-align: center;
+  background-color: var(--display-text);
+  border-radius: 1em;
+  position: relative;
+  padding: 1em 0;
+  color: var(--text);
+}
+
+.section.about .section-content .intro h1 {
+  color: var(--background-variant);
+  letter-spacing: 1px;
+  margin: 0 0 1em 0;
+}
+
+.section.about .section-content .intro p {
+  font-weight: 100;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 24px;
+}
+
 @media screen and (min-width: 700px) {
   .section {
     Width: 100%;
@@ -729,7 +755,7 @@ svg {
 }
 
 .intro-item-column {
-  Position: relative;
+  position: relative;
   top: 0px;
   float: left;
   width: 100%;
@@ -755,10 +781,10 @@ svg {
 
 .intro-item {
   position: relative;
-  -webkit-transition: top  0.6s ease-in, -webkit-box-shadow  0.6s ease-in;
-  transition: top  0.6s ease-in, -webkit-box-shadow  0.6s ease-in;
-  transition: box-shadow  0.6s ease-in, top  0.6s ease-in;
-  transition: box-shadow  0.6s ease-in, top  0.6s ease-in, -webkit-box-shadow  0.6s ease-in;
+  -webkit-transition: top 0.6s ease-in, -webkit-box-shadow 0.6s ease-in;
+  transition: top 0.6s ease-in, -webkit-box-shadow 0.6s ease-in;
+  transition: box-shadow 0.6s ease-in, top 0.6s ease-in;
+  transition: box-shadow 0.6s ease-in, top 0.6s ease-in, -webkit-box-shadow 0.6s ease-in;
   margin: 2em 5% 3em;
   -webkit-transition: 0.85s ease-out;
   transition: 0.85s ease-out;
@@ -773,10 +799,10 @@ svg {
   }
   .intro-item {
     position: relative;
-    -webkit-transition: top  0.6s ease-in, -webkit-box-shadow  0.6s ease-in;
-    transition: top  0.6s ease-in, -webkit-box-shadow  0.6s ease-in;
-    transition: box-shadow  0.6s ease-in, top  0.6s ease-in;
-    transition: box-shadow  0.6s ease-in, top  0.6s ease-in, -webkit-box-shadow  0.6s ease-in;
+    -webkit-transition: top 0.6s ease-in, -webkit-box-shadow 0.6s ease-in;
+    transition: top 0.6s ease-in, -webkit-box-shadow 0.6s ease-in;
+    transition: box-shadow 0.6s ease-in, top 0.6s ease-in;
+    transition: box-shadow 0.6s ease-in, top 0.6s ease-in, -webkit-box-shadow 0.6s ease-in;
   }
 }
 
@@ -880,6 +906,8 @@ svg {
   padding: 5px;
   position: absolute;
   border-radius: 6px;
+  -webkit-transition: all 0.32s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  transition: all 0.32s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
 
 .item-options-cont .options {
@@ -904,24 +932,13 @@ svg {
   margin: 0 0;
 }
 
-.item-options-cont .options button.details svg {
+.item-options-cont .options button svg {
   position: relative;
   height: 20px;
   width: 20px;
 }
 
-.item-options-cont .options button.details svg path {
-  stroke: var(--text);
-  stroke-width: 10px;
-}
-
-.item-options-cont .options button.expand svg {
-  position: relative;
-  height: 20px;
-  width: 20px;
-}
-
-.item-options-cont .options button.expand svg path {
+.item-options-cont .options button svg path {
   stroke: var(--text);
   stroke-width: 10px;
 }
@@ -954,7 +971,7 @@ svg {
 }
 
 .item-options-cont .item-options svg path {
-  fill: #fff;
+  fill: var(--display-text);
 }
 
 .options-cont-display {
@@ -988,7 +1005,7 @@ svg {
 }
 
 #footer p {
-  font-family: "Muli","Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Muli", "Kessel 105", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-stretch: ultra-condensed;
   -webkit-font-feature-settings: inherit;
   font-feature-settings: inherit;
