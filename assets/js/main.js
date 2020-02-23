@@ -52,14 +52,14 @@ var colors = [
 ];
 
 function setStorage(val){
-	for(var k in val){
+	for(let k in val){
 		localStorage.setItem(val, val[k]);
 		console.log(val, val[k]);
 	};
 };
 
 function setProp(el, val){
-	for(var k in val){
+	for(let k in val){
 		el.setProperty(k, val[k]);
 	};
 };
@@ -142,15 +142,15 @@ function landingTxt(){
 	var allImages = images.concat(subImages, subImages2);
 
 	function precache(){
-		for(var i = 0; i < allImages.length; i++){
-			var img = [];
+		for(let i = 0; i < allImages.length; i++){
+			let img = [];
 			img[i] = new Image();
 			img[i].src = allImages[i];
 		};
 	};	
 	precache();
 
-	for(var i = 0; i < words.length; i++){
+	for(let i = 0; i < words.length; i++){
 		//create indicators
 		var indicatorClone = indicatorSvgContainer[0].cloneNode(true);
         indicatorContainer.appendChild(indicatorClone);
@@ -162,7 +162,7 @@ function landingTxt(){
 		docStyles.setProperty("--circle-length2", newIndicatorSvgContainer[0].querySelector("#indicator-circle2").getTotalLength() + "px");
 	}
 
-	for(var i = 0; i < words.length; i++){
+	for(let i = 0; i < words.length; i++){
 		newIndicators[i].parentElement.parentElement.addEventListener("click", function currentSlide(){
 			console.log(`indicator${i + 1} clicked`);
 			showSlides(slideIndex = i + 1);
@@ -179,7 +179,7 @@ function landingTxt(){
 
 
 	// setTimeout(function currentSlide(n){
-	// 	var i = 1;
+	// 	let i = 1;
 
 	// 	if( i < words.length){
 	// 		i++;
@@ -210,7 +210,7 @@ function landingTxt(){
 			loop: 1,
 		});
 
-		// for( var i = 0; i < words.length; i++){
+		// for( let i = 0; i < words.length; i++){
 
 		dispTl.add({
 			targets: "#content-txt",
@@ -228,7 +228,7 @@ function landingTxt(){
 		});
 
 		// }
-		for( var  i = 0; i < newIndicators.length; i++){
+		for( let  i = 0; i < newIndicators.length; i++){
 			newIndicators[i].style.strokeDashoffset = "var(--circle-length2)";
 		}
 		function changetxt(){
@@ -435,7 +435,7 @@ function themeSelector(){
 		text;
 
 	
-	for(var i = 0; i < colors.length; i++){
+	for(let i = 0; i < colors.length; i++){
 		var themeBtn = [],
 			newThemeBtn;
 		
@@ -473,7 +473,7 @@ function galleryOptions(e){
 		console.log(introItem);
 	}
 
-	detailsBtn.addEventListener("click", function (){
+	detailsBtn.addEventListener("click", ()=>{
 		itemOverlay.classList.toggle("show-overlay");
 	})
 	console.log(expandBtn, detailsBtn);
@@ -482,7 +482,7 @@ function galleryOptions(e){
 		
 		itemOptionsCont.querySelector(".options").classList.toggle("options-display");
 	}
-	// for(var x = 0; x < itemOptionsCont; x++){
+	// for(let x = 0; x < itemOptionsCont; x++){
 	// 	itemOptionsCont.querySelectorAll(".options button")[i].classList.toggle("display");
 	// }
 	//toggle options display
