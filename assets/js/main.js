@@ -30,6 +30,16 @@ var colors = [
 
 	],
 	[
+		["#232329"],
+		["rgba(255, 255, 255, 0.364)"],
+		["#3197ff"],
+		["inset 0 10px 40px rgba(0, 0, 0, 0.6)"],
+		["#fff"],
+		["#232329"],
+		["Blu-Dark"]
+
+	],
+	[
 		["#fff"],
 		["rgba(35, 35, 41, 0.358)"],
 		["#3197ff"],
@@ -38,15 +48,24 @@ var colors = [
 		["#fff"],
 		["Blu-Light"]
 
-	],
+	],	
 	[
 		["#232329"],
 		["rgba(255, 255, 255, 0.364)"],
-		["#3197ff"],
+		["#793ef8"],
 		["inset 0 10px 40px rgba(0, 0, 0, 0.6)"],
 		["#fff"],
 		["#232329"],
-		["Blu-Dark"]
+		["Pur-Dark"]
+	],
+	[
+		["#fff"],
+		["rgba(35, 35, 41, 0.358)"],
+		["#793ef8"],
+		["inset 0 10px 40px rgba(255, 255, 255, 0.5)"],
+		["#232329"],
+		["#fff"],
+		["Pur-Light"]
 
 	]
 ];
@@ -178,19 +197,6 @@ function landingTxt(){
 	}
 
 
-	// setTimeout(function currentSlide(n){
-	// 	let i = 1;
-
-	// 	if( i < words.length){
-	// 		i++;
-	// 	}
-	// 	else{
-	// 		i= 0;
-	// 	}
-	// 	console.log(i)
-	// 	showSlides(slideIndex = i)
-	// }, duration);
-
 	function showSlides(n){
 		var i,
 			animeComplete = false;
@@ -258,154 +264,6 @@ function landingTxt(){
 		console.log(animeComplete)
 	}
 
-	// function slideTimer(){
-
-	// 	anime({
-	// 		targets: newIndicators[i],
-	// 		easing: 'easeOutExpo',
-	// 		strokeDashoffset: 120 - (120 * 0) / 100
-	// 	})
-
-	// 	if( i < words.length - 1){
-	// 		i++;
-	// 	}
-	// 	else{
-	// 		i = 0;
-	// 	}
-
-	// }
-	
-	// setTimeout(slideTimer, duration);
-
-	/************* Second attempt ***********/
-	// var dispTl = anime.timeline({
-	// 	easing: 'easeOutExpo',
-	// 	direction: 'alternate-reverse',
-	// 	loop: true,
-	// });
-
-	// dispTl.add({
-	// 	targets: "#content-txt",
-	// 	translateY: "100%",
-	// });
-	// dispTl.add({
-	// 	targets: ".image-wrapper img",
-	// 	translateY: "100%",
-	// 	delay: 0
-	// });
-	// dispTl.add({
-	// 	targets: "#content-txt",
-	// 	changeBegin: 
-	// 		function changetxt(){
-	// 			console.log(i);
-
-	// 			anime({
-	// 				easing: 'easeOutExpo',
-	// 				targets: newIndicators,
-	// 				// strokeDashoffset: 120 - (120 * 0) / 100
-		
-	// 			});
-	// 			anime({
-	// 				easing: 'easeOutExpo',
-	// 				targets: newIndicators[i - 1],
-	// 				begin: function(){
-	// 					console.log(i);
-	// 					newIndicators[i - 1].style.transitionDuration = "3s";
-	// 					newIndicators[i - 1].style.strokeDashoffset = "0px";
-	// 				}
-	// 				// strokeDashoffset: 120 - (120 * 100) / 100
-		
-	// 			});				
-	// 			console.log(i);
-	// 			contentTxt.innerHTML = words[i];
-	// 			contentTxt.dataset.name = words[i];
-	// 			contentImgMain.setAttribute("src", images[i]);
-	// 			var wordsLength = words.length -1;
-	// 			if( i < wordsLength){
-	// 				i++;
-	// 			}
-	// 			else{
-	// 				i = 0;
-	// 			}
-	// 		}
-	// });
-	// dispTl.add({
-	// 	targets: "#content-txt",
-	// 	translateY: "0",
-	// 	// delay: 1800,
-	// 	changeComplete: function(){
-	// 		anime({
-	// 			easing: 'easeOutExpo',
-	// 			targets: newIndicators[i - 1],
-	// 			strokeDashoffset: 120 - (120 * 0) / 100
-	// 		});
-	// 	}
-
-	// });
-	// dispTl.add({
-	// 	targets: ".image-wrapper img",
-	// 	translateY: "0",
-	// });
-
-
-
-
-
-	// var animeTl = anime.timeline({
-	// 	easing: 'easeOutExpo',
-	// 	direction: 'alternate-reverse',
-	// 	loop: true,
-	// 	duration: 1050
-	// });
-	
-	// animeTl.add({
-	// 	targets: "#content-txt",
-	// 	translateY: "100%",
-	// 	delay: 1050
-	// });
-	// animeTl.add({
-	// 	targets: ".image-wrapper img",
-	// 	translateY: "100%",
-	// 	delay: 0
-	// });
-
-
-	// animeTl.add({
-	// 	targets: "#content-txt",
-	// 	changeBegin: 
-	// 		function changetxt(){
-
-	// 			anime({
-	// 				targets: indicators[i],
-	// 				easing: 'easeOutExpo',
-	// 				duration: 1050,
-	// 				strokeDashoffset: 120 - (120 * 100) / 100
-	// 				// begin: function(){
-	// 				// 	i
-	// 				// }
-	// 			})
-				
-	// 			contentTxt.innerHTML = words[i];
-	// 			contentTxt.dataset.name = words[i];
-	// 			contentImgMain.setAttribute("src", images[i]);
-	// 			var wordsLength = words.length -1;
-	// 			if( i < wordsLength){
-	// 				i++;
-	// 			}
-	// 			else{
-	// 				i = 0;
-	// 			}
-	// 		}
-	// });
-	// animeTl.add({
-	// 	targets: "#content-txt",
-	// 	translateY: "0"
-	// });
-	// animeTl.add({
-	// 	targets: ".image-wrapper img",
-	// 	translateY: "0",
-	// });
-	
 }
 
 //Using the MiParallax plugin
