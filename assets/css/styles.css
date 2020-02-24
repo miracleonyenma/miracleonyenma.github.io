@@ -708,17 +708,41 @@ svg {
   background-color: var(--display-text);
   border-radius: 1em;
   position: relative;
-  padding: 1em 0;
+  padding: 1em 1em;
   color: var(--text);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
 }
 
-.section.about .section-content .intro h1 {
+.section.about .section-content .intro .profile-pic-cont {
+  width: 70%;
+  -ms-grid-column: 2;
+  grid-column: 2;
+  margin: auto;
+}
+
+.section.about .section-content .intro .profile-pic-cont .profile-pic {
+  border-radius: 1em;
+}
+
+.section.about .section-content .intro .profile-pic-cont .profile-pic img {
+  width: 100%;
+}
+
+.section.about .section-content .intro .bio {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.section.about .section-content .intro .bio h1 {
   color: var(--background-variant);
   letter-spacing: 1px;
   margin: 0 0 1em 0;
 }
 
-.section.about .section-content .intro p {
+.section.about .section-content .intro .bio p {
   font-weight: 100;
   font-family: 'PT Sans', sans-serif;
   font-size: 24px;
