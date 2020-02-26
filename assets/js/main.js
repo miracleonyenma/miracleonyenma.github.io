@@ -385,7 +385,9 @@ for(i = 0; i < optionsBtns.length; i++){
 	optionsBtns[i].addEventListener("click", galleryOptions);
 }
 window.addEventListener("load", loaderFunc(33.33));
-window.addEventListener("scroll", MiParallax);
+window.addEventListener("scroll", function(){
+	window.requestAnimationFrame(MiParallax);
+});
 window.addEventListener("load", landingTxt);
 window.addEventListener("load", themeSelector);
 window.addEventListener("load", checkStorage);
