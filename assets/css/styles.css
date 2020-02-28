@@ -1242,8 +1242,8 @@ svg {
   position: fixed;
   left: 50%;
   top: 100%;
-  -webkit-transform: translate(-50%, -100%) rotate(90deg);
-          transform: translate(-50%, -100%) rotate(90deg);
+  -webkit-transform: translate(-50%, -65%) rotate(90deg);
+          transform: translate(-50%, -65%) rotate(90deg);
   -webkit-transition: 0.34s ease-in;
   transition: 0.34s ease-in;
 }
