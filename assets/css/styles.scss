@@ -1,20 +1,11 @@
 /*
-Author: Alphas
+Author: @miracleio
 
 */
-/* ==========================================================================
-   Alphas custom styles
-   ========================================================================== */
-/* Specify in CSS
-Use the following CSS rules to specify these families: */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-.main-body * {
-  // transition: 0.32s ease-in;
 }
 
 button {
@@ -89,6 +80,7 @@ button {
   background-color: var(--background-variant);
 }
 
+
 #hoves-preloader {
   position: fixed;
   width: 100%;
@@ -133,7 +125,6 @@ button {
         height: 20%;
         position: absolute;
         background: rgba(255, 255, 255, 0.329);
-        -webkit-transform: translate(24%, 8%);
         transform: translate(48%, 8%);
         top: 10px;
         border-radius: 70px;
@@ -175,7 +166,6 @@ button {
   margin: 1.2%;
   text-align: center;
   transition: 0.72s cubic-bezier(0, 0, 1, 1);
-  -webkit-transition: 0.72s cubic-bezier(0, 0, 1, 1);
 }
 
 svg {
@@ -200,7 +190,6 @@ svg {
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 #circle2 {
@@ -219,7 +208,6 @@ svg {
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 #path1 {
@@ -259,7 +247,6 @@ svg {
 .svg-container svg:last-child {
   // clip: rect(0, 90px, 90px, 0);
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 .svg-container:hover svg:last-child {
@@ -317,18 +304,7 @@ svg {
 }
 
 .animate-in:nth-child(1) {
-  -webkit-animation: animate-in 0.76s ease-in;
   animation: animate-in 0.76s ease-in;
-}
-
-@-webkit-keyframes animate-in {
-  0% {
-    left: -50%;
-  }
-
-  100% {
-    left: 0;
-  }
 }
 
 @keyframes animate-in {
@@ -349,7 +325,6 @@ svg {
   position: relative;
   text-align: center;
   transition: 0.72s cubic-bezier(0, 0, 1, 1);
-  -webkit-transition: 0.72s cubic-bezier(0, 0, 1, 1);
   cursor: pointer;
 
   &:before {
@@ -401,7 +376,6 @@ svg {
   stroke-opacity: 1;
   paint-order: markers stroke fill;
   transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-  -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 
 }
 
@@ -549,7 +523,6 @@ svg {
   left: -100%;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.45s ease-out;
   transition: all 0.45s ease-out;
 }
 
@@ -574,9 +547,7 @@ svg {
   position: absolute;
   margin: 0;
   top: -10px;
-  /* font-family: "Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif; */
   font-weight: 900;
-  -webkit-font-smoothing: antialiased !important;
 }
 
 .txt-contain span {
@@ -602,7 +573,6 @@ svg {
   left: 0;
   white-space: nowrap;
   width: 0;
-  -webkit-transition: 0.68s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition: 0.68s cubic-bezier(0.645, 0.045, 0.355, 1);
   overflow: hidden;
 }
@@ -630,27 +600,14 @@ svg {
 
 @keyframes float {
   0% {
-    -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 
   100% {
-    -webkit-transform: translateY(25%);
     transform: translateY(25%);
   }
 }
 
-@-webkit-keyframes float {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  100% {
-    -webkit-transform: translateY(25%);
-    transform: translateY(25%);
-  }
-}
 
 @media screen and (min-width: 700px) {
   .hoves-display-container {
@@ -709,7 +666,9 @@ svg {
         transform: translate(-50%, -50%);
 
         .txt-contain {
-          h1 {}
+          h1 {
+
+          }
 
           span {
             font-size: 4rem;
@@ -721,24 +680,66 @@ svg {
 
 }
 
+.scroll-down-cont{
+    width: 100%;
+    transform: translateY(-175%);
+    position: absolute;
+    top: 100%;
+    
+  .scroll-down{
+    display: grid;
+    justify-items: center;
 
-.scrldwn {
-  width: 120px;
-  height: 60px;
-  margin: auto;
-  position: relative;
-  display: table;
+    a{
+      button{
+        background: none;
+        pointer-events: none;
+        color: var(--display-text);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 100;
+        letter-spacing: 1px;
+      }
+    }
+
+    svg{
+      position: relative;
+      height: 50px;
+      width: 50px;
+      pointer-events: none;
+
+      rect{
+        opacity: 1;
+        fill: none;
+        fill-opacity: 1;
+        stroke: var(--display-text);
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-opacity: 1;
+      }
+
+      path{
+        fill: none;
+        stroke: var(--display-text);
+        stroke-width: 10;
+        stroke-linecap: butt;
+        stroke-linejoin: miter;
+        stroke-miterlimit: 4;
+        stroke-dasharray: none;
+        stroke-opacity: 1;
+        animation: scroller 1.64s ease-in infinite normal;
+      }
+    }
+  }
 }
 
-.mouse {
-  width: 100%;
-  height: 100%;
-}
-
-.scrldwn svg {
-  width: 50px;
-  height: 50px;
-  margin: auto;
+@keyframes scroller {
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(20%);
+    stroke-opacity: 0;
+  }
 }
 
 /*######## sections ########*/
@@ -1200,7 +1201,6 @@ svg {
   position: relative;
   height: 100px;
   width: 100%;
-  -webkit-transition: .32s ease-in;
   transition: .32s ease-in;
   overflow: hidden;
   background: var(--background-write-up);
@@ -1209,7 +1209,6 @@ svg {
 #footer p {
   font-family: "Muli", "Kessel 105", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-stretch: ultra-condensed;
-  -webkit-font-feature-settings: inherit;
   font-feature-settings: inherit;
   text-transform: uppercase;
   font-weight: 900;

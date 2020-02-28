@@ -1,12 +1,7 @@
 /*
-Author: Alphas
+Author: @miracleio
 
 */
-/* ==========================================================================
-   Alphas custom styles
-   ========================================================================== */
-/* Specify in CSS
-Use the following CSS rules to specify these families: */
 * {
   padding: 0;
   margin: 0;
@@ -106,8 +101,8 @@ button {
   height: 20%;
   position: absolute;
   background: rgba(255, 255, 255, 0.329);
-  -webkit-transform: translate(24%, 8%);
-  transform: translate(48%, 8%);
+  -webkit-transform: translate(48%, 8%);
+          transform: translate(48%, 8%);
   top: 10px;
   border-radius: 70px;
 }
@@ -142,8 +137,8 @@ button {
   display: inline-block;
   margin: 1.2%;
   text-align: center;
-  transition: 0.72s cubic-bezier(0, 0, 1, 1);
   -webkit-transition: 0.72s cubic-bezier(0, 0, 1, 1);
+  transition: 0.72s cubic-bezier(0, 0, 1, 1);
 }
 
 svg {
@@ -167,8 +162,8 @@ svg {
   stroke-dashoffset: 0;
   stroke-opacity: 1;
   paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
   -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
+  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 #circle2 {
@@ -186,8 +181,8 @@ svg {
   stroke-dashoffset: 230;
   stroke-opacity: 1;
   paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
   -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
+  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 #path1 {
@@ -223,8 +218,8 @@ svg {
 }
 
 .svg-container svg:last-child {
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
   -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
+  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 .svg-container:hover #circle1 {
@@ -284,7 +279,7 @@ svg {
 
 .animate-in:nth-child(1) {
   -webkit-animation: animate-in 0.76s ease-in;
-  animation: animate-in 0.76s ease-in;
+          animation: animate-in 0.76s ease-in;
 }
 
 @-webkit-keyframes animate-in {
@@ -311,8 +306,8 @@ svg {
   height: 60px;
   position: relative;
   text-align: center;
-  transition: 0.72s cubic-bezier(0, 0, 1, 1);
   -webkit-transition: 0.72s cubic-bezier(0, 0, 1, 1);
+  transition: 0.72s cubic-bezier(0, 0, 1, 1);
   cursor: pointer;
 }
 
@@ -360,8 +355,8 @@ svg {
   stroke-dashoffset: calc(var(--circle-length1) - (var(--circle-length1) * 100) / 100);
   stroke-opacity: 1;
   paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
   -webkit-transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
+  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
 }
 
 #indicator-circle2 {
@@ -556,9 +551,7 @@ svg {
   position: absolute;
   margin: 0;
   top: -10px;
-  /* font-family: "Kessel 105","Helvetica Neue",Helvetica,Arial,sans-serif; */
   font-weight: 900;
-  -webkit-font-smoothing: antialiased !important;
 }
 
 .txt-contain span {
@@ -594,25 +587,25 @@ svg {
   width: 100%;
 }
 
-@keyframes float {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(25%);
-    transform: translateY(25%);
-  }
-}
-
 @-webkit-keyframes float {
   0% {
     -webkit-transform: translateY(0);
-    transform: translateY(0);
+            transform: translateY(0);
   }
   100% {
     -webkit-transform: translateY(25%);
-    transform: translateY(25%);
+            transform: translateY(25%);
+  }
+}
+
+@keyframes float {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(25%);
+            transform: translateY(25%);
   }
 }
 
@@ -666,23 +659,81 @@ svg {
   }
 }
 
-.scrldwn {
-  width: 120px;
-  height: 60px;
-  margin: auto;
-  position: relative;
-  display: table;
-}
-
-.mouse {
+.scroll-down-cont {
   width: 100%;
-  height: 100%;
+  -webkit-transform: translateY(-175%);
+          transform: translateY(-175%);
+  position: absolute;
+  top: 100%;
 }
 
-.scrldwn svg {
-  width: 50px;
+.scroll-down-cont .scroll-down {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+}
+
+.scroll-down-cont .scroll-down a button {
+  background: none;
+  pointer-events: none;
+  color: var(--display-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+}
+
+.scroll-down-cont .scroll-down svg {
+  position: relative;
   height: 50px;
-  margin: auto;
+  width: 50px;
+  pointer-events: none;
+}
+
+.scroll-down-cont .scroll-down svg rect {
+  opacity: 1;
+  fill: none;
+  fill-opacity: 1;
+  stroke: var(--display-text);
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-opacity: 1;
+}
+
+.scroll-down-cont .scroll-down svg path {
+  fill: none;
+  stroke: var(--display-text);
+  stroke-width: 10;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1;
+  -webkit-animation: scroller 1.64s ease-in infinite normal;
+          animation: scroller 1.64s ease-in infinite normal;
+}
+
+@-webkit-keyframes scroller {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+    stroke-opacity: 0;
+  }
+}
+
+@keyframes scroller {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+    stroke-opacity: 0;
+  }
 }
 
 /*######## sections ########*/
@@ -1149,7 +1200,7 @@ svg {
   font-family: "Muli", "Kessel 105", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-stretch: ultra-condensed;
   -webkit-font-feature-settings: inherit;
-  font-feature-settings: inherit;
+          font-feature-settings: inherit;
   text-transform: uppercase;
   font-weight: 900;
   padding: 1em;

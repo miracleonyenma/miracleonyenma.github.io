@@ -272,27 +272,35 @@ function MiParallax(e){
     var rate;
     for(i = 0; i < Milax.length; i++){
         var scrolled = window.pageYOffset,
-            elRate = parseFloat(Milax[i].getAttribute("data-rate")),
-            translateY = Milax[i].getAttribute("");
-        if(Milax[i].getAttribute("data-rate") == null){
+            elRate = parseFloat(Milax[i].getAttribute("data-rate"));
+
+		if(Milax[i].getAttribute("data-rate") == null){
            elRate = -2;
-        }
+		};
+
+		//for fading out elements
+		if(Milax[i].getAttribute("data-opacity")){
+			var elRateOpacity = parseFloat(Milax[i].getAttribute("data-opacity"));
+			
+			//get and compute the fraction of the viewport. 
+			//This determines how fast the element will fade out
+			var winHgt = window.innerHeight / elRateOpacity;
+			if(scrolled <= winHgt){
+				var opacityRate = ((winHgt - scrolled)/winHgt);
+			};
+
+			(opacityRate) <= 0 ?  Milax[i].style.opacity = 0 : Milax[i].style.opacity = opacityRate;
+		};
+
         rate = scrolled / elRate;
-        console.log(rate);
         Milax[i].style.transform = 'translate3d(0, '+ rate + 'px, 0px)';    
     }
     
 };
 
-function themeSelector(){
-	var background,
-		backgroundWriteUp,
-		backgroundVariant,
-		shadow,
-		displayText,
-		text;
 
-	
+function themeSelector(){
+
 	for(let i = 0; i < colors.length; i++){
 		var themeBtn = [],
 			newThemeBtn;
@@ -304,7 +312,6 @@ function themeSelector(){
 		newThemeBtn[i].style.background = colors[i][2];
 		newThemeBtn[i].style.borderColor = colors[i][0];
 		newThemeBtn[i].setAttribute("data-tag", colors[i][6]);
-
 
 		newThemeBtn[i].addEventListener("click", function(){setTheme(colors[i])});
 
@@ -339,12 +346,7 @@ function galleryOptions(e){
 		itemOptionsCont.classList.toggle("options-cont-display");
 		
 		itemOptionsCont.querySelector(".options").classList.toggle("options-display");
-	}
-	// for(let x = 0; x < itemOptionsCont; x++){
-	// 	itemOptionsCont.querySelectorAll(".options button")[i].classList.toggle("display");
-	// }
-	//toggle options display
-	
+	}	
 }
 
 
@@ -376,14 +378,53 @@ document.addEventListener('readystatechange', e => {
 		.from(blob, 1.8, {autoAlpha: 0, y: "90%"}, delay=1)
 		// .from(wordsTxt, 1.8, {autoAlpha: 0, x: "-90%"}, delay=1)
 
-
-
 	}
 });
+
+
+//using the smoothScrolls plugin
+var ScrollEl = document.querySelectorAll(".scrollEl"),
+	linkTarget = [];
+	
+function smoothScroll(e, dur){
+    var e = document.querySelector(e),
+        ePos = e.getBoundingClientRect().top,
+        startPos = window.pageYOffset,
+        d = ePos,
+        startTime = null;
+
+        function animation(currentTime){
+            if(startTime === null) startTime = currentTime;
+            var elapsed = currentTime - startTime,
+                run = ease(elapsed, startPos, d, dur);
+            window.scrollTo(0, run);
+            if(elapsed < dur) requestAnimationFrame(animation);
+		};
+		
+        function ease (t, b, c, d) {
+            t /= d;
+            t--;
+            return c*(t*t*t + 1) + b;
+		};
+		
+        requestAnimationFrame(animation);
+}
+
+
+
 //options buttons
 for(i = 0; i < optionsBtns.length; i++){
 	optionsBtns[i].addEventListener("click", galleryOptions);
 }
+
+for(i = 0; i < ScrollEl.length; i++){
+    ScrollEl[i].addEventListener("click", function(e){
+		e.preventDefault();
+        smoothScroll(e.target.getAttribute("href"), 2000);
+    });
+};
+
+
 window.addEventListener("load", loaderFunc(33.33));
 window.addEventListener("scroll", function(){
 	window.requestAnimationFrame(MiParallax);
