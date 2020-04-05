@@ -383,32 +383,32 @@ document.addEventListener('readystatechange', e => {
 
 
 //using the smoothScrolls plugin
-var ScrollEl = document.querySelectorAll(".scrollEl"),
-	linkTarget = [];
+// var ScrollEl = document.querySelectorAll(".scrollEl"),
+// 	linkTarget = [];
 	
-function smoothScroll(e, dur){
-    var e = document.querySelector(e),
-        ePos = e.getBoundingClientRect().top,
-        startPos = window.pageYOffset,
-        d = ePos,
-        startTime = null;
+// function smoothScroll(e, dur){
+//     var e = document.querySelector(e),
+//         ePos = e.getBoundingClientRect().top,
+//         startPos = window.pageYOffset,
+//         d = ePos,
+//         startTime = null;
 
-        function animation(currentTime){
-            if(startTime === null) startTime = currentTime;
-            var elapsed = currentTime - startTime,
-                run = ease(elapsed, startPos, d, dur);
-            window.scrollTo(0, run);
-            if(elapsed < dur) requestAnimationFrame(animation);
-		};
+//         function animation(currentTime){
+//             if(startTime === null) startTime = currentTime;
+//             var elapsed = currentTime - startTime,
+//                 run = ease(elapsed, startPos, d, dur);
+//             window.scrollTo(0, run);
+//             if(elapsed < dur) requestAnimationFrame(animation);
+// 		};
 		
-        function ease (t, b, c, d) {
-            t /= d;
-            t--;
-            return c*(t*t*t + 1) + b;
-		};
+//         function ease (t, b, c, d) {
+//             t /= d;
+//             t--;
+//             return c*(t*t*t + 1) + b;
+// 		};
 		
-        requestAnimationFrame(animation);
-}
+//         requestAnimationFrame(animation);
+// }
 
 
 
@@ -417,12 +417,12 @@ for(i = 0; i < optionsBtns.length; i++){
 	optionsBtns[i].addEventListener("click", galleryOptions);
 }
 
-for(i = 0; i < ScrollEl.length; i++){
-    ScrollEl[i].addEventListener("click", function(e){
-		e.preventDefault();
-        smoothScroll(e.target.getAttribute("href"), 2000);
-    });
-};
+// for(i = 0; i < ScrollEl.length; i++){
+//     ScrollEl[i].addEventListener("click", function(e){
+// 		e.preventDefault();
+//         smoothScroll(e.target.getAttribute("href"), 2000);
+//     });
+// };
 
 
 window.addEventListener("load", loaderFunc(33.33));
