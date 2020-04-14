@@ -174,42 +174,7 @@ svg {
   position: absolute;
 }
 
-#circle1 {
-  opacity: 1;
-  /*vector-effect:none;*/
-  fill: none;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: var(--display-text);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: 230, 230;
-  stroke-dashoffset: 0;
-  stroke-opacity: 1;
-  paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
-#circle2 {
-  opacity: 1;
-  /*vector-effect:none;*/
-  fill: none;
-  fill-opacity: 1;
-  fill-rule: nonzero;
-  stroke: var(--background);
-  stroke-width: 8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: 230, 230;
-  stroke-dashoffset: 230;
-  stroke-opacity: 1;
-  paint-order: markers stroke fill;
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
+//logo
 #path1 {
   display: inline;
   /*vector-effect:none;*/
@@ -244,22 +209,6 @@ svg {
   paint-order: markers fill stroke;
 }
 
-.svg-container svg:last-child {
-  // clip: rect(0, 90px, 90px, 0);
-  transition: 0.72s cubic-bezier(0.3, 0, 0.25, 1);
-}
-
-.svg-container:hover svg:last-child {
-  // clip: rect(32px, 90px, 90px, 0);
-}
-
-.svg-container:hover #circle1 {
-  stroke-dashoffset: 57.5;
-}
-
-.svg-container:hover #circle2 {
-  stroke-dashoffset: 0;
-}
 
 .hoves {
   text-align: center;
@@ -772,7 +721,7 @@ svg {
 
     .intro{
       background-color: var(--display-text);
-      border-radius: 1em;
+      border-radius: 8px;
       position: relative;
       padding: 1em 1em;
       margin: auto;
@@ -795,11 +744,12 @@ svg {
         }
 
           .profile-pic{
-            border-radius: 1em;
+            border-radius: 8px;
             position: relative;
             padding: 0;
+            left: 10%;
             overflow: hidden;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.22);
+            box-shadow: 0px 0px 60px rgba(0, 0, 0, 0.09);
             transform: translate(-50%, 0);
             z-index: 1;
 
@@ -835,7 +785,7 @@ svg {
         .socials{
           text-align: left;
           padding: 1em;
-          border-radius: 1em;
+          border-radius: 8px;
           position: relative;
           display: inline-block;
           padding: 1em;
@@ -917,7 +867,7 @@ svg {
           }
     
             .profile-pic{
-              transform: translate(30%, 0);
+              transform: translate(15%, 0);
     
               img{
                 width: 100%;
