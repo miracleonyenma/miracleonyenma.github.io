@@ -247,8 +247,19 @@ svg {
   grid-row: 2;
   z-index: 3;
 
-  .indicators-container {
-    position: relative;
+  .indicator-svg-container, svg{
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
+@media screen and (min-width: 768px){
+  .indicator-container{
+    .indicator-svg-container, svg{
+      width: 60px;
+      height: 60px;
+    }
   }
 }
 
@@ -720,13 +731,14 @@ svg {
     padding: 1em 10%;
 
     .intro{
-      background-color: var(--display-text);
+      background-color: transparent;
+      border: 2px solid var(--background-variant);
       border-radius: 8px;
       position: relative;
       padding: 1em 1em;
       margin: auto;
       width: 90%;
-      color: var(--text);
+      color: var(--display-text);
       display: block;
       
 
@@ -1204,14 +1216,33 @@ svg {
   position: fixed;
   left: 50%;
   top: 100%;
-  transform: translate(-50%, -65%) rotate(90deg);
+  transform: translate(-50%, -40%) rotate(90deg);
   transition: 0.34s ease-in;
-
+  
+  &:focus, &:active, &:hover{
+    transform: translate(-50%, -65%) rotate(90deg);
+  }
+  
   .themes-btns-cnt {
     padding: 6px 2px;
     border-radius: 32px;
     background: var(--background-variant);
+    position: relative;
 
+    
+    &::after{
+      content: "";
+      width: 30px;
+      height: 30px;
+      background: var(--background-variant);
+      position: absolute;
+      left: 0%;
+      transform: translate(-100%, -50%);
+      top: 50%;
+      border-radius: 2em 0 0 2em;
+
+    }
+    
     button {
       width: 20px;
       height: 20px;
@@ -1235,13 +1266,20 @@ svg {
     left: calc(95% - 10px);
     top: 50%;
     transform: translate(0, -50%);
-
+    
+    &:focus, &:active, &:hover{
+      transform: translate(0, -50%);
+    }
 
     .themes-btns-cnt {
       padding: 6px 2px;
       border-radius: 32px;
       background: var(--background-variant);
       cursor: pointer;
+
+      &:after{
+        display: none;
+      }
 
       button {
         width: 20px;
